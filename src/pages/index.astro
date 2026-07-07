@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Watch from "../components/landing/watch.astro";
+import Blog from "../components/landing/blog.astro"
+import HeroSlider from "../components/landing/heroSlider.astro"
+---
+
+<Layout>
+  <HeroSlider />
+  <section class="flex w-full items-center h-auto py-20 px-20 space-y-9">
+    <ul class="flex justify-center gap-8 w-full text-gray">
+      <li class="flex gap-3">
+        <i>:D</i>
+        <p>WORLDWIDE SHIPPING</p>
+      </li>
+      <li class="flex gap-3">
+        <i>:D</i>
+        <p>CERTIFICATED BY GURUS</p>
+      </li>
+      <li class="flex gap-3">
+        <i>:D</i>
+        <p>30 DAYS MONEY BACK</p>
+      </li>
+      <li class="flex gap-3">
+        <i>:D</i>
+        <p>99% POSITIVE FEEDBACKS</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="flex">
+    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center"></div>
+    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center"></div>
+    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-120 h-120" href=""></a> </div>
+    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center"></div>
+  </section>
+
+  <section
+    class="flex flex-col w-full justify-center items-center h-auto py-20 px-20 space-y-9"
+  >
+    <div class="flex flex-col items-center">
+      <h3 class="text-[30px] font-medium">Feature Products</h3>
+      <p class="text-[14px] text-gray">Elegance is an attitude longines</p>
+    </div>
+
+    <div class="grid grid-cols-5">
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+      <Watch />
+    </div>
+  </section>
+  <section class="flex w-full h-105 overflow-hidden items-center">
+    <img
+      class="object-cover object-bottom w-180"
+      src="/src/assets/images/graphic-banner-6-1.jpg"
+      alt=""
+    />
+    <div class="relative">
+      <img
+        class="object-cover"
+        src="/src/assets/images/graphic-banner-7.jpg"
+        alt=""
+      />
+      <h3 class="absolute text-gold top-50 left-20 text-[12px]">
+        ABOUT COMPANY
+      </h3>
+      <p class="absolute text-white top-55 left-20 text-[30px] max-w-72">
+        Just now learn about our brand, quality and latest design watches.
+      </p>
+    </div>
+  </section>
+
+  <section class="flex flex-col w-full">
+    <div class="relative">
+      <img
+        src="/src/assets/images/graphic-banner-8.jpg"
+        alt=""
+        class="w-full h-auto object-cover"
+      />
+      <div
+        class="absolute top-1/4 left-2/6 flex max-w-70 -translate-x-1/2 flex-col items-center gap-4 text-center"
+      >
+        <h3 class="text-[12px] text-gray">MEN'S WATCHES COLLECTION</h3>
+
+        <p class="text-[40px] text-white">Best discounts Flat 70% off</p>
+
+        <button
+          class="rounded-2xl border-2 border-gold px-5 py-1 text-[12px] uppercase text-gold"
+        >
+          Purchase now
+        </button>
+      </div>
+    </div>
+
+    <ul
+      class="flex justify-center gap-8 w-full items-center py-10 px-20 bg-dark"
+    >
+      <li class="flex gap-3">
+        <i class="text-gold">:D</i>
+        <p class="text-white">WORLDWIDE SHIPPING</p>
+      </li>
+      <li class="flex gap-3">
+        <i class="text-gold">:D</i>
+        <p class="text-white">CERTIFICATED BY GURUS</p>
+      </li>
+      <li class="flex gap-3">
+        <i class="text-gold">:D</i>
+        <p class="text-white">30 DAYS MONEY BACK</p>
+      </li>
+      <li class="flex gap-3">
+        <i class="text-gold">:D</i>
+        <p class="text-white">99% POSITIVE FEEDBACKS</p>
+      </li>
+    </ul>
+  </section>
+  <section
+    class="flex flex-col w-full justify-center items-center h-auto py-20 px-20 space-y-9"
+  >
+    <div class="flex flex-col items-center">
+      <h3 class="text-[30px] font-medium">Latest Blogs</h3>
+      <p class="text-[14px] text-gray">You’re not quite sure of your position</p>
+    </div>
+    <div class="grid grid-cols-4 gap-8">
+        <Blog />
+        <Blog />
+        <Blog />
+        <Blog />
+      </div>
+  </section>
+</Layout>

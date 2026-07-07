@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/general/navbar.astro";
+import Footer from "../components/general/footer.astro"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/df43cc713a.js"
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/tks2apj.css" />
+  </head>
+  <body class="bg-cream">
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+
+</html>

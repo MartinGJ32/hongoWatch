@@ -1,0 +1,153 @@
+---
+
+interface Slide {
+  img: string;
+  category: string;
+  title: string;
+  text: string;
+  link: string;
+}
+
+const slides: Slide[] = [
+  {
+    img: "/src/assets/images/watch-0011.png",
+    category: "ASEREJE",
+    title: "High quality stylish watches",
+    text: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    link: "#",
+  },
+  {
+    img: "/src/assets/images/watch-0011.png",
+    category: "ASEREJE2",
+    title: "Spending time you feel great",
+    text: "Made from 316L stainless steel, this classic is intended to stay as such and is designed.",
+    link: "#",
+  },
+];
+---
+
+<section
+  id="frs-slider"
+  class="h-[90vh] w-full flex flex-row justify-between items-center bg-[radial-gradient(#3b322c,#1b1513)]"
+>
+  <!-- Columna redes sociales -->
+  <div class="flex flex-col items-center justify-center ml-16 text-white">
+    <ul class="list-none flex flex-col items-center gap-4 mb-8">
+      <li><i class="fa-brands fa-facebook-f"></i></li>
+      <li><i class="fa-brands fa-twitter"></i></li>
+      <li><i class="fa-brands fa-youtube"></i></li>
+      <li><i class="fa-brands fa-linkedin-in"></i></li>
+    </ul>
+    <h3
+      class="[writing-mode:sideways-lr] [text-orientation:mixed] text-[#ffffff59] flex items-center justify-center text-[16px] tracking-[0.1rem] after:content-[''] after:block after:w-8 after:rotate-90 after:border-b-[0.05rem] after:border-[#ffffff59] after:mt-12 after:mb-12"
+    >
+      FOLLOW US
+    </h3>
+  </div>
+
+  <!-- Contenido del slide -->
+  <div class="flex flex-row justify-center items-center">
+    <img
+      src={slides[0].img}
+      id="slide-watch"
+      class="hidden max-w-[35%] pointer-events-none mr-20"
+      alt=""
+    />
+
+    <article
+      id="watch-article"
+      class="hidden flex-col mr-32 max-w-100 items-start justify-center gap-4"
+    >
+      <h3 id="watch-sl-category" class="text-gold uppercase text-2">
+        {slides[0].category}
+      </h3>
+      <h2 id="watch-sl-title" class="text-white text-[60px]">
+        {slides[0].title}
+      </h2>
+      <p id="watch-sl-text" class="text-[#ffffff73] text-[16px] font-thin">
+        {slides[0].text}
+      </p>
+      <a
+        href={slides[0].link}
+        id="watch-sl-link"
+        class="max-w-[16rem] text-gold border-[0.2rem] border-solid border-gold rounded-[4rem] p-[0.8rem] uppercase font-medium flex justify-center items-center"
+      >
+        Our collection
+      </a>
+    </article>
+  </div>
+
+  <!-- Columna de botones -->
+  <div id="buttons-collumn" class="flex flex-col gap-6 mr-16"></div>
+</section>
+
+<script define:vars={{ slides }}>
+  let currentIndex = 0;
+  let buttonsArray = [];
+
+  const slideImg = document.getElementById("slide-watch");
+  const slideArticle = document.getElementById("watch-article");
+  const slideCategory = document.getElementById("watch-sl-category");
+  const slideTitle = document.getElementById("watch-sl-title");
+  const slideText = document.getElementById("watch-sl-text");
+  const slideLink = document.getElementById("watch-sl-link");
+  const buttonsCollumn = document.getElementById("buttons-collumn");
+
+  const BASE_BUTTON_CLASSES = ["cursor-pointer", "bg-transparent", "border-none", "text-10"];
+  const INACTIVE_CLASSES = ["text-[rgba(255,255,255,0.536)]"];
+  const ACTIVE_CLASSES = ["text-white", "line-through"];
+
+  function createButtons() {
+    slides.forEach((_, i) => {
+      const button = document.createElement("button");
+      button.classList.add(...BASE_BUTTON_CLASSES, ...INACTIVE_CLASSES);
+      button.innerText = "0" + (i + 1);
+      buttonsCollumn.appendChild(button);
+    });
+
+    buttonsArray = Array.from(buttonsCollumn.querySelectorAll("button"));
+
+    buttonsArray.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        currentIndex = index;
+        showSlide();
+        setActiveButton();
+      });
+    });
+  }
+
+  function setActiveButton() {
+    buttonsArray.forEach((btn, i) => {
+      if (i === currentIndex) {
+        btn.classList.remove(...INACTIVE_CLASSES);
+        btn.classList.add(...ACTIVE_CLASSES);
+      } else {
+        btn.classList.remove(...ACTIVE_CLASSES);
+        btn.classList.add(...INACTIVE_CLASSES);
+      }
+    });
+  }
+
+  function showSlide() {
+    const item = slides[currentIndex];
+    slideImg.classList.remove("hidden");
+    slideArticle.classList.remove("hidden");
+    slideArticle.classList.add("flex");
+    slideImg.setAttribute("src", item.img);
+    slideCategory.innerText = item.category;
+    slideTitle.innerText = item.title;
+    slideText.innerText = item.text;
+    slideLink.setAttribute("href", item.link);
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide();
+    setActiveButton();
+  }
+
+  createButtons();
+  showSlide();
+  setActiveButton();
+  setInterval(next, 5000);
+</script>
