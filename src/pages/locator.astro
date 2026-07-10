@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WathcTitle from "../assets/images/size/watch-title-img-01-1.jpg";
+import Map from "../assets/images/locator/watch-56.jpg.webp";
+import locationImg1 from  "../assets/images/locator/fashion-store-locator-01-1.jpg.webp";
+import locationImg2 from  "../assets/images/locator/fashion-store-locator-02-1.jpg.webp";
+import locationImg3 from  "../assets/images/locator/fashion-store-locator-03-1.jpg.webp";
+import locationImg4 from  "../assets/images/locator/store-locator-img-04.jpg.webp";
+import Hero from "../components/general/hero.astro";
+import Location from "../components/locator/location.astro";
+
+---
+
+<Layout>
+  <Hero
+    title="Store locator"
+    description="worldwide fashion store"
+    image={WathcTitle.src}
+  />
+  <section class="flex w-full items-center py-20 px-20 bg-white">
+  <div class="flex-1 flex justify-end pr-20">
+    <div class="relative flex max-w-[550px] h-[110px] items-center">
+      <p class="absolute top-1/2 -translate-y-1/2 text-[110px] font-bold text-gray/20">
+        2780
+      </p>
+
+      <h3 class="relative z-10 text-[15px] uppercase font-medium">
+        More than 2780 worldwide stores
+      </h3>
+    </div>
+  </div>
+
+  <div class="w-px h-[110px] bg-gray/20"></div>
+
+  <div class="flex-1 flex justify-start pl-20">
+    <p class="max-w-[420px] text-[20px]">
+      Your premium brand had better be delivering something special or it's not
+      going to get the business
+    </p>
+  </div>
+</section>
+<section class="bg-[rgb(246,246,246)] min-h-[800px] relative flex flex-col w-full justify-end items-center py-20 px-20 gap-4">
+    <img src={Map.src} alt="" class="absolute z-0">
+    <p class="z-1 text-[20px] max-w-60 text-center">Worldwide all hongo
+fashion store locations</p>
+<button class="z-1 rounded-full bg-white w-[37px] h-[37px]  animate-bounce hover:bg-gold hover:text-white cursor-pointer" >🡓</button>
+</section>
+<section class="flex w-full justify-center items-center py-20 px-20 bg-[rgb(246,246,246)]">
+<div class="grid grid-cols-4 gap-5">
+<Location image={locationImg1.src} country="AUSTRALIA" address="301 Greenhouse, Custard fashion factory,
+Prospect drive, Australia" phoneNumber="44 12345 67890" email="info@hongo.com"/>
+<Location image={locationImg2.src}  country="SWITZERLAND" address="Maria reichenbach, Green hill drive,
+Zürich 8022, Switzerland" phoneNumber="44 12345 67890" email="info@hongo.com"/>
+<Location image={locationImg3.src}  country="ICELAND" address="401 Broadway, 24th Floor, Glenwood lane,
+North brunswick, Iceland" phoneNumber="44 12345 67890" email="info@hongo.com"/>
+<Location image={locationImg4.src} country="FRANCE" address="West 14th North street, Hamilton lane,
+Suite 21, Netherlands" phoneNumber="44 12345 67890" email="info@hongo.com"/>
+</div>
+</section>
+<section class="bg-white relative flex w-full justify-center items-center py-20 px-20 gap-8">
+    <div class="max-w-[530px]"><h3 class="text-[12px] text-gold">STYLE LIFE IS SHORT</h3><p class="font-semibold text-[20px]">A classic never goes out of style life is short, make every outfit count fashion is just another accessory for someone with great style</p></div>
+    <p class="max-w-[590px] text-[14px] text-gray">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  been the industry’s standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the when an unknown.</p>
+</section>
+<section class="flex">
+    <div class="w-120 h-120 bg-gold py-[20px] px-[80px] flex flex-col justify-center"> <h4 class="text-[12px] text-white">NEW OPEN THE STORE</h4> <p class="text-[28px] text-white">Come and join celebrate our store grand opening!</p> <button class="text-[11px] uppercase max-w-[140px] text-white bg-dark py-[8px] px-[10px] border-2 border-transparent hover:border-dark hover:bg-transparent hover:text-dark transition-all ease-out duration-300">let´s celebrate now</button> </div>
+    <div class="w-120 h-120 bg-[url('/src/assets/images/locator/fashion-store-locator-09.jpg')] bg-cover bg-center"></div>
+    <div class="bg-dark w-120 h-120"></div>
+    <div class="w-120 h-120 bg-[url('/src/assets/images/locator/store-locator-img-05.jpg')] bg-cover bg-center"></div>
+  </section>
+</Layout>

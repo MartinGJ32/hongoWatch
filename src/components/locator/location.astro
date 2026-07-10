@@ -1,0 +1,114 @@
+---
+const {
+  country,
+  address,
+  image,
+  phoneNumber,
+  email,
+} = Astro.props;
+
+const countryCodes: Record<string, string> = {
+  argentina: "AR",
+  australia: "AU",
+  austria: "AT",
+  belgium: "BE",
+  bolivia: "BO",
+  brazil: "BR",
+  bulgaria: "BG",
+  canada: "CA",
+  chile: "CL",
+  china: "CN",
+  colombia: "CO",
+  korea: "KR",
+  "south korea": "KR",
+  "north korea": "KP",
+  "costa rica": "CR",
+  croatia: "HR",
+  cuba: "CU",
+  denmark: "DK",
+  ecuador: "EC",
+  egypt: "EG",
+  "el salvador": "SV",
+  "united arab emirates": "AE",
+  uae: "AE",
+  slovakia: "SK",
+  slovenia: "SI",
+  spain: "ES",
+  "united states": "US",
+  usa: "US",
+  finland: "FI",
+  france: "FR",
+  germany: "DE",
+  greece: "GR",
+  guatemala: "GT",
+  honduras: "HN",
+  hungary: "HU",
+  india: "IN",
+  indonesia: "ID",
+  ireland: "IE",
+  iceland: "IS",
+  israel: "IL",
+  italy: "IT",
+  japan: "JP",
+  mexico: "MX",
+  morocco: "MA",
+  norway: "NO",
+  "new zealand": "NZ",
+  netherlands: "NL",
+  holland: "NL",
+  panama: "PA",
+  paraguay: "PY",
+  peru: "PE",
+  poland: "PL",
+  portugal: "PT",
+  "united kingdom": "GB",
+  england: "GB",
+  romania: "RO",
+  russia: "RU",
+  sweden: "SE",
+  switzerland: "CH",
+  thailand: "TH",
+  taiwan: "TW",
+  turkey: "TR",
+  ukraine: "UA",
+  uruguay: "UY",
+  venezuela: "VE",
+  vietnam: "VN",
+};
+
+function getFlag(country: string) {
+  country = country.trim().toLowerCase();
+  return countryCodes[country];
+}
+---
+
+<article class="bg-white">
+  <img
+    src={image}
+    alt=""
+    class="object-cover max-w-[360px] max-h-[415px]"
+  />
+  <div class="flex flex-col justify-center p-10 max-w-85 gap-5">
+    <div class="flex items-center gap-1">
+      <img
+        src={`https://flagsapi.com/${getFlag(country)}/flat/64.png`} 
+        alt=""
+        class="w-[26px] h-[18px] object-cover"
+      />
+      <h3 class="text-[12px] font-semibold">{country}</h3>
+    </div>
+    <div class="flex flex-col pb-5 border-b border-gray/20">
+      <p class="text-[14px] text-gray font-normal">
+        {address}
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 text-gray">
+      <p class="pr-5 text-[12px]">
+        <span class="text-black">Phone:</span> +{phoneNumber}
+      </p>
+      <p class="text-[12px]">
+        <span class="text-black">Email:</span> {email}
+      </p>
+    </div>
+  </div>
+</article>
