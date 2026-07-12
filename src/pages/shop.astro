@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+import teamImg from "../assets/images/contact/watch-the-team-01.jpg";
+import womanBeachImg from "../assets/images/contact/contact-classic-img-22-1.jpg";
+import beachImg from "../assets/images/contact/contact-classic-img-20.jpg";
+import Hero from "../components/general/hero.astro";
+import Watch from "../components/shop/watch.astro";
+---
+
+<Layout>
+  <Hero
+    title="Shop classic"
+    description="we provide latest fashion trends"
+    image="src\assets\images\shop\watch-shop-header-bg.jpg"
+  />
+
+  <section
+    class="flex w-full h-auto bg-white py-3 px-40 border-b-2 border-gray/20"
+  >
+    <div>
+      <a
+        href="/"
+        class="cursor-pointer text-[13px] text-gray px-2 border-r-2 border-gray/50"
+        >Home</a
+      >
+      <a href="/shop" class="cursor-pointer text-[13px] text-gray px-2"
+        >Shop classic</a
+      >
+    </div>
+  </section>
+  <section
+    class="w-full h-auto bg-white py-30 px-20 grid grid-cols-[200px_1fr] gap-10"
+  >
+    <div class="flex flex-col gap-4 text-[13px]">
+      <h4>Filter by color</h4>
+      <ul>
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-black rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold"
+              >Black</span
+            >
+          </a>
+          <p class="text-[14px]">54</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-blue-600 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold">Blue</span
+            >
+          </a>
+          <p class="text-[14px]">13</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-amber-900 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold"
+              >Brown</span
+            >
+          </a>
+          <p class="text-[14px]">56</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-yellow-500 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold"
+              >Golden</span
+            >
+          </a>
+          <p class="text-[14px]">38</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-green-600 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold"
+              >Green</span
+            >
+          </a>
+          <p class="text-[14px]">08</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-red-600 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold">Red</span>
+          </a>
+          <p class="text-[14px]">11</p>
+        </li>
+
+        <li class="flex justify-between">
+          <a href="" class="group flex gap-2 items-center">
+            <span
+              class="bg-gray-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+            >
+              <i class="fa-solid fa-check text-[8px]"></i>
+            </span>
+            <span class="text-[14px] text-gray group-hover:text-gold"
+              >Silver</span
+            >
+          </a>
+          <p class="text-[14px]">30</p>
+        </li>
+      </ul>
+      <div class="flex flex-col gap-4 text-[13px]">
+        <h4>Filter by size</h4>
+
+        <ul>
+          <li class="flex justify-between">
+            <a href="" class="group flex gap-2 items-center">
+              <span
+                class="border border-gray rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-gold"
+              >
+                <i class="fa-solid fa-check text-[8px]"></i>
+              </span>
+              <span class="text-[14px] text-gray group-hover:text-gold"
+                >39MM</span
+              >
+            </a>
+            <p class="text-[14px]">37</p>
+          </li>
+
+          <li class="flex justify-between">
+            <a href="" class="group flex gap-2 items-center">
+              <span
+                class="border border-gray rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-gold"
+              >
+                <i class="fa-solid fa-check text-[8px]"></i>
+              </span>
+              <span class="text-[14px] text-gray group-hover:text-gold"
+                >40MM</span
+              >
+            </a>
+            <p class="text-[14px]">50</p>
+          </li>
+
+          <li class="flex justify-between">
+            <a href="" class="group flex gap-2 items-center">
+              <span
+                class="border border-gray rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-gold"
+              >
+                <i class="fa-solid fa-check text-[8px]"></i>
+              </span>
+              <span class="text-[14px] text-gray group-hover:text-gold"
+                >41MM</span
+              >
+            </a>
+            <p class="text-[14px]">50</p>
+          </li>
+
+          <li class="flex justify-between">
+            <a href="" class="group flex gap-2 items-center">
+              <span
+                class="border border-gray rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-gold"
+              >
+                <i class="fa-solid fa-check text-[8px]"></i>
+              </span>
+              <span class="text-[14px] text-gray group-hover:text-gold"
+                >42MM</span
+              >
+            </a>
+            <p class="text-[14px]">46</p>
+          </li>
+
+          <li class="flex justify-between">
+            <a href="" class="group flex gap-2 items-center">
+              <span
+                class="border border-gray rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-gold"
+              >
+                <i class="fa-solid fa-check text-[8px]"></i>
+              </span>
+              <span class="text-[14px] text-gray group-hover:text-gold"
+                >45MM</span
+              >
+            </a>
+            <p class="text-[14px]">36</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <div class="flex justify-between items-center">
+        <div class="flex gap-2 items-center justify-center">
+          <p
+            class="px-2 border-r-2 border-gray/50 text-[14px] max-h-4 flex items-center"
+          >
+            Showing 1–12 of 114 results
+          </p><div class="flex gap-2">
+            <button class="flex gap-1"
+              ><span class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span></button
+            >
+            <button class="flex gap-1"
+              ><span class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span></button
+            >
+            <button class="flex gap-1"
+              ><span class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span><span
+                class="w-2 h-3 bg-dark text-transparent block"></span></button
+            >
+          </div>
+        </div>
+        <select name="Default sorting" id=""
+          ><option value="default">Default sorting</option><option
+            value="menu_order">Default sorting</option
+          >
+          <option value="rating">Sort by average rating</option>
+          <option value="date">Sort by latest</option>
+          <option value="price">Sort by price: low to high</option>
+          <option value="price-desc">Sort by price: high to low</option></select
+        >
+      </div>
+      <div class="grid grid-cols-4">
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+        <Watch />
+      </div>
+      <nav></nav>
+    </div>
+  </section>
+</Layout>

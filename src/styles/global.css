@@ -45,4 +45,18 @@
       display: none;
     }
   }
+
+  .decor-line {
+    @apply relative pl-4;
+  }
+
+  .decor-line::before {
+    content: "";
+    @apply absolute block left-0;
+    top: 50%;
+    width: 9px;
+    height: 2px;
+    background-color: rgb(184, 139, 95);
+    transform: translateY(-50%);
+  }
 }
