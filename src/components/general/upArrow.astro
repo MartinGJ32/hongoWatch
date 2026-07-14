@@ -1,15 +1,15 @@
-
-<button class="fixed top-[90%] right-4 hover:right-2 -rotate-90 text-[15px] hover:text-[18px] text-gray/50 hover:text-gray  bg-transparent border-none" id="up-button">Scroll up <i>🡢</i></button>
-
-
+<button
+  class="hidden md:block fixed top-[90%] right-4 hover:right-2 -rotate-90 text-[15px] hover:text-[18px] text-gray/50 hover:text-gray bg-transparent border-none transition-all duration-300 ease-out"
+  id="up-button">Scroll up <i>🡢</i></button
+>
 
 <script>
-    let upButton = document.getElementById("up-button");
+  let upButton = document.getElementById("up-button");
 
-function scrollUp() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+  function scrollUp() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 
-    upButton.addEventListener("click", scrollUp);
+  upButton.addEventListener("click", scrollUp);
 </script>

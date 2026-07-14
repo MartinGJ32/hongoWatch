@@ -1,0 +1,99 @@
+  <div class="relative h-6">
+    <div
+      class="absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-gray-300 rounded-full"
+    >
+    </div>
+
+    <div
+      id="range"
+      class="absolute top-1/2 h-[2px] -translate-y-1/2 bg-gold rounded-full"
+    >
+    </div>
+
+    <input
+      id="minPrice"
+      type="range"
+      min="10"
+      max="4000"
+      value="10"
+      class="absolute w-full h-6 appearance-none bg-transparent pointer-events-none
+      [&::-webkit-slider-runnable-track]:bg-transparent
+      [&::-webkit-slider-thumb]:appearance-none
+      [&::-webkit-slider-thumb]:pointer-events-auto
+      [&::-webkit-slider-thumb]:cursor-pointer
+      [&::-webkit-slider-thumb]:h-4
+      [&::-webkit-slider-thumb]:w-4
+      [&::-webkit-slider-thumb]:rounded-full
+      [&::-webkit-slider-thumb]:bg-white
+      [&::-webkit-slider-thumb]:border-2
+      [&::-webkit-slider-thumb]:border-gold
+      "
+    />
+
+    <input
+      id="maxPrice"
+      type="range"
+      min="11"
+      max="4000"
+      value="4000"
+      class="absolute w-full h-6 appearance-none bg-transparent pointer-events-none
+      [&::-webkit-slider-runnable-track]:bg-transparent
+      [&::-webkit-slider-thumb]:appearance-none
+      [&::-webkit-slider-thumb]:pointer-events-auto
+      [&::-webkit-slider-thumb]:cursor-pointer
+      [&::-webkit-slider-thumb]:h-4
+      [&::-webkit-slider-thumb]:w-4
+      [&::-webkit-slider-thumb]:rounded-full
+      [&::-webkit-slider-thumb]:bg-white
+      [&::-webkit-slider-thumb]:border-2
+      [&::-webkit-slider-thumb]:border-gold
+      "
+    />
+  </div>
+
+  <div class="flex justify-between text-[14px]">
+    <span>$<span id="minValue">10</span></span>
+    <span>$<span id="maxValue">4000</span></span>
+  </div>
+
+
+<script>
+  const minSlider = document.getElementById("minPrice");
+  const maxSlider = document.getElementById("maxPrice");
+  const range = document.getElementById("range");
+
+  const minValue = document.getElementById("minValue");
+  const maxValue = document.getElementById("maxValue");
+
+  const max = Number(minSlider.max);
+
+  function updateRange() {
+    let min = Number(minSlider.value);
+    let maxVal = Number(maxSlider.value);
+
+    // Evita que se crucen
+    if (min > maxVal - 1) {
+      min = maxVal - 1;
+      minSlider.value = min;
+    }
+
+    if (maxVal < min + 1) {
+      maxVal = min + 1;
+      maxSlider.value = maxVal;
+    }
+
+    const left = (min / max) * 100;
+    const right = (maxVal / max) * 100;
+
+    range.style.left = left + "%";
+    range.style.width = right - left + "%";
+
+    minValue.textContent = min;
+    maxValue.textContent = maxVal;
+  }
+
+  minSlider.addEventListener("input", updateRange);
+  maxSlider.addEventListener("input", updateRange);
+
+  updateRange();
+</script>

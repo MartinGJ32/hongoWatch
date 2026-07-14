@@ -17,35 +17,35 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
     description="worldwide fashion store"
     image={WathcTitle.src}
   />
-  <section class="flex w-full items-center py-20 px-20 bg-white">
-    <div class="flex-1 flex justify-end pr-20">
-      <div class="relative flex max-w-[550px] h-[110px] items-center">
+  <section class="flex flex-col lg:flex-row w-full items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-white gap-8 lg:gap-0">
+    <div class="flex-1 flex justify-center lg:justify-end pr-0 lg:pr-20">
+      <div class="relative flex max-w-[320px] sm:max-w-[450px] lg:max-w-[550px] h-[70px] sm:h-[90px] lg:h-[110px] items-center">
         <p
-          class="absolute top-1/2 -translate-y-1/2 text-[110px] font-bold text-gray/20"
+          class="absolute top-1/2 -translate-y-1/2 text-[60px] sm:text-[85px] lg:text-[110px] font-bold text-gray/20"
         >
           2780
         </p>
 
-        <h3 class="relative z-10 text-[15px] uppercase font-medium">
+        <h3 class="relative z-10 text-[13px] sm:text-[14px] lg:text-[15px] uppercase font-medium">
           More than 2780 worldwide stores
         </h3>
       </div>
     </div>
 
-    <div class="w-px h-[110px] bg-gray/20"></div>
+    <div class="w-full h-px lg:w-px lg:h-[110px] bg-gray/20"></div>
 
-    <div class="flex-1 flex justify-start pl-20">
-      <p class="max-w-[420px] text-[20px]">
+    <div class="flex-1 flex justify-center lg:justify-start pl-0 lg:pl-20 text-center lg:text-left">
+      <p class="max-w-[320px] sm:max-w-[420px] text-[16px] sm:text-[18px] lg:text-[20px]">
         Your premium brand had better be delivering something special or it's
         not going to get the business
       </p>
     </div>
   </section>
   <section
-    class="bg-[rgb(246,246,246)] min-h-[800px] relative flex flex-col w-full justify-end items-center py-20 px-20 gap-4"
+    class="bg-[rgb(246,246,246)] min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] relative flex flex-col w-full justify-end items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-4"
   >
-    <img src={Map.src} alt="" class="absolute z-0" />
-    <p class="z-1 text-[20px] max-w-60 text-center">
+    <img src={Map.src} alt="" class="absolute z-0 w-full h-full object-cover" />
+    <p class="z-1 text-[16px] sm:text-[18px] lg:text-[20px] max-w-60 text-center">
       Worldwide all hongo fashion store locations
     </p>
     <button
@@ -54,9 +54,9 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
     >
   </section>
   <section
-    class="flex w-full justify-center items-center py-20 px-20 bg-[rgb(246,246,246)]"
+    class="flex w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-[rgb(246,246,246)]"
   >
-    <div class="grid grid-cols-4 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5">
       <Location
         image={locationImg1.src}
         country="AUSTRALIA"
@@ -92,11 +92,11 @@ Suite 21, Netherlands"
     </div>
   </section>
   <section
-    class="bg-white relative flex w-full justify-center items-center py-20 px-20 gap-8"
+    class="bg-white relative flex flex-col lg:flex-row w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-6 lg:gap-8"
   >
     <div class="max-w-[530px]">
       <h3 class="text-[12px] text-gold decor-line ml-2">STYLE LIFE IS SHORT</h3><p
-        class="font-semibold text-[20px]"
+        class="font-semibold text-[18px] sm:text-[20px]"
       >
         A classic never goes out of style life is short, make every outfit count
         fashion is just another accessory for someone with great style
@@ -111,12 +111,12 @@ Suite 21, Netherlands"
       text ever since the when an unknown.
     </p>
   </section>
-  <section class="flex">
+  <section class="flex flex-col lg:flex-row w-full">
     <div
-      class="w-120 h-120 bg-gold py-[20px] px-[80px] flex flex-col justify-center"
+      class="w-full lg:w-120 min-h-[220px] sm:min-h-[260px] lg:h-120 bg-gold py-10 sm:py-8 lg:py-[20px] px-6 sm:px-10 lg:px-[80px] flex flex-col justify-center gap-2 lg:gap-0"
     >
       <h4 class="text-[12px] text-white">NEW OPEN THE STORE</h4>
-      <p class="text-[28px] text-white">
+      <p class="text-[22px] sm:text-[26px] lg:text-[28px] text-white">
         Come and join celebrate our store grand opening!
       </p>
       <button
@@ -125,11 +125,11 @@ Suite 21, Netherlands"
       >
     </div>
     <div
-      class="w-120 h-120 bg-[url('/src/assets/images/locator/fashion-store-locator-09.jpg')] bg-cover bg-center"
+      class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/locator/fashion-store-locator-09.jpg')] bg-cover bg-center"
     >
     </div>
-    <div class="bg-dark w-120 h-120 flex flex-col justify-center items-center">
-      <h4 class="max-w-[250px] text-[20px] text-white">Fashion shop feelings and relax day enjoy weekend!</h4>
+    <div class="bg-dark w-full lg:w-120 min-h-[420px] lg:h-120 flex flex-col justify-center items-center px-6 py-10 lg:px-0 lg:py-0">
+      <h4 class="max-w-[250px] text-[18px] sm:text-[20px] text-white">Fashion shop feelings and relax day enjoy weekend!</h4>
       <div class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start">
         <i class="text-[14px] text-gold">D</i>
         <p class="text-[14px] text-gray font-light">
@@ -162,16 +162,16 @@ Suite 21, Netherlands"
       </div>
     </div>
     <div
-      class="w-120 h-120 bg-[url('/src/assets/images/locator/store-locator-img-05.jpg')] bg-cover bg-center"
+      class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/locator/store-locator-img-05.jpg')] bg-cover bg-center"
     >
     </div>
   </section>
     <section
-    class="flex w-full items-center justify-center h-auto py-40 px-20 gap-20 bg-white"
+    class="flex w-full items-center justify-center h-auto py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20 gap-8 sm:gap-12 lg:gap-20 bg-white"
   >
-    <div class="grid grid-cols-3 gap-18">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-18">
       <div
-        class="max-w-[270px] max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
         <i class="text-[20px] text-gold">A</i>
         <h4 class="text-center text-[13px]">Free deliver all time</h4>
@@ -182,7 +182,7 @@ Suite 21, Netherlands"
       </div>
 
       <div
-        class="max-w-[270px] max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
         <i class="text-[20px] text-gold">A</i>
         <h4 class="text-center text-[13px]">24 hours expert support</h4>
@@ -193,7 +193,7 @@ Suite 21, Netherlands"
       </div>
 
       <div
-        class="max-w-[270px] max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
         <i class="text-[20px] text-gold">A</i>
         <h4 class="text-center text-[13px]">Money back policy</h4>
@@ -207,16 +207,16 @@ Suite 21, Netherlands"
   </section>
 
 
-  <section class="grid grid-cols-3 bg-[rgb(246,246,246)] py-40 px-20">
+  <section class=" grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 bg-[rgb(246,246,246)] py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20">
     <SaleLoctaion />
     <SaleLoctaion />
     <SaleLoctaion />
   </section>
-  <section class="flex flex-wrap bg-white py-20 px-50 gap-30 justify-center items-center">
-    <img src="src\assets\images\locator\companies\brands-1-2.png.webp" alt="">
-    <img src="src\assets\images\locator\companies\brands-2-1.png.webp" alt="">
-    <img src="src\assets\images\locator\companies\brands-3-2.png.webp" alt="">
-    <img src="src\assets\images\locator\companies\brands-4-2.png.webp" alt="">
-    <img src="src\assets\images\locator\companies\brands-5-1.png.webp" alt="">
+  <section class="flex flex-wrap bg-white py-12 px-6 sm:py-16 sm:px-16 lg:py-20 lg:px-50 gap-8 sm:gap-16 lg:gap-30 justify-center items-center">
+    <img src="src\assets\images\locator\companies\brands-1-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
+    <img src="src\assets\images\locator\companies\brands-2-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
+    <img src="src\assets\images\locator\companies\brands-3-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
+    <img src="src\assets\images\locator\companies\brands-4-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
+    <img src="src\assets\images\locator\companies\brands-5-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
   </section>
 </Layout>

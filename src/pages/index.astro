@@ -7,43 +7,43 @@ import HeroSlider from "../components/landing/heroSlider.astro"
 
 <Layout>
   <HeroSlider />
-  <section class="flex w-full items-center h-auto py-20 px-20 space-y-9">
-    <ul class="flex justify-center gap-8 w-full text-gray">
-      <li class="flex gap-3">
+  <section class="flex w-full items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9">
+    <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full text-gray">
+      <li class="flex gap-3 items-center">
         <i>:D</i>
         <p>WORLDWIDE SHIPPING</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i>:D</i>
         <p>CERTIFICATED BY GURUS</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i>:D</i>
         <p>30 DAYS MONEY BACK</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i>:D</i>
         <p>99% POSITIVE FEEDBACKS</p>
       </li>
     </ul>
   </section>
 
-  <section class="flex">
-    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center"></div>
-    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center"></div>
-    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-120 h-120" href=""></a> </div>
-    <div class="w-120 h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center"></div>
+  <section class="flex flex-col lg:flex-row w-full">
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center"></div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center"></div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-full h-full" href=""></a> </div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center"></div>
   </section>
 
   <section
-    class="flex flex-col w-full justify-center items-center h-auto py-20 px-20 space-y-9"
+    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
   >
     <div class="flex flex-col items-center">
-      <h3 class="text-[30px] font-medium">Feature Products</h3>
+      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Feature Products</h3>
       <p class="text-[14px] text-gray">Elegance is an attitude longines</p>
     </div>
 
-    <div class="grid grid-cols-5">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-0">
       <Watch />
       <Watch />
       <Watch />
@@ -56,22 +56,22 @@ import HeroSlider from "../components/landing/heroSlider.astro"
       <Watch />
     </div>
   </section>
-  <section class="flex w-full h-105 overflow-hidden items-center">
+  <section class="flex flex-col lg:flex-row w-full h-auto lg:h-105 overflow-hidden items-center">
     <img
-      class="object-cover object-bottom w-180"
+      class="object-cover object-bottom w-full h-64 sm:h-80 lg:w-180 lg:h-full"
       src="/src/assets/images/graphic-banner-6-1.jpg"
       alt=""
     />
-    <div class="relative">
+    <div class="relative w-full lg:w-auto">
       <img
-        class="object-cover"
+        class="object-cover w-full h-64 sm:h-80 lg:h-auto lg:w-auto"
         src="/src/assets/images/graphic-banner-7.jpg"
         alt=""
       />
-      <h3 class="absolute text-gold top-50 left-20 text-[12px]">
+      <h3 class="absolute text-gold top-8 sm:top-12 lg:top-50 left-6 sm:left-10 lg:left-20 text-[12px]">
         ABOUT COMPANY
       </h3>
-      <p class="absolute text-white top-55 left-20 text-[30px] max-w-72">
+      <p class="absolute text-white top-14 sm:top-20 lg:top-55 left-6 sm:left-10 lg:left-20 text-[20px] sm:text-[24px] lg:text-[30px] max-w-[220px] sm:max-w-72">
         Just now learn about our brand, quality and latest design watches.
       </p>
     </div>
@@ -85,11 +85,11 @@ import HeroSlider from "../components/landing/heroSlider.astro"
         class="w-full h-auto object-cover"
       />
       <div
-        class="absolute top-1/4 left-2/6 flex max-w-70 -translate-x-1/2 flex-col items-center gap-4 text-center"
+        class="absolute top-1/4 left-2/6 flex max-w-70 -translate-x-1/2 flex-col items-center gap-2 sm:gap-3 lg:gap-4 text-center"
       >
-        <h3 class="text-[12px] text-gray">MEN'S WATCHES COLLECTION</h3>
+        <h3 class="text-[10px] sm:text-[11px] lg:text-[12px] text-gray">MEN'S WATCHES COLLECTION</h3>
 
-        <p class="text-[40px] text-white">Best discounts Flat 70% off</p>
+        <p class="text-[24px] sm:text-[32px] lg:text-[40px] text-white">Best discounts Flat 70% off</p>
 
         <button
           class="rounded-2xl border-2 border-gold px-5 py-1 text-[12px] uppercase text-gold"
@@ -100,34 +100,34 @@ import HeroSlider from "../components/landing/heroSlider.astro"
     </div>
 
     <ul
-      class="flex justify-center gap-8 w-full items-center py-10 px-20 bg-dark"
+      class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full items-center py-6 px-6 sm:py-8 sm:px-10 lg:py-10 lg:px-20 bg-dark"
     >
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i class="text-gold">:D</i>
         <p class="text-white">WORLDWIDE SHIPPING</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i class="text-gold">:D</i>
         <p class="text-white">CERTIFICATED BY GURUS</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i class="text-gold">:D</i>
         <p class="text-white">30 DAYS MONEY BACK</p>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 items-center">
         <i class="text-gold">:D</i>
         <p class="text-white">99% POSITIVE FEEDBACKS</p>
       </li>
     </ul>
   </section>
   <section
-    class="flex flex-col w-full justify-center items-center h-auto py-20 px-20 space-y-9"
+    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
   >
     <div class="flex flex-col items-center">
-      <h3 class="text-[30px] font-medium">Latest Blogs</h3>
+      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Latest Blogs</h3>
       <p class="text-[14px] text-gray">You’re not quite sure of your position</p>
     </div>
-    <div class="grid grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <Blog />
         <Blog />
         <Blog />

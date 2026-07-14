@@ -28,10 +28,10 @@ const slides: Slide[] = [
 
 <section
   id="frs-slider"
-  class="h-[90vh] w-full flex flex-row justify-between items-center bg-[radial-gradient(#3b322c,#1b1513)]"
+  class="min-h-[550px] sm:min-h-[650px] lg:h-[90vh] w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center bg-[radial-gradient(#3b322c,#1b1513)] py-14 lg:py-0 px-6 lg:px-0 gap-8 lg:gap-0"
 >
   <!-- Columna redes sociales -->
-  <div class="flex flex-col items-center justify-center ml-16 text-white">
+  <div class="hidden lg:flex flex-col items-center justify-center ml-16 text-white">
     <ul class="list-none flex flex-col items-center gap-4 mb-8">
       <li><i class="fa-brands fa-facebook-f"></i></li>
       <li><i class="fa-brands fa-twitter"></i></li>
@@ -46,31 +46,31 @@ const slides: Slide[] = [
   </div>
 
   <!-- Contenido del slide -->
-  <div class="flex flex-row justify-center items-center">
+  <div class="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0 w-full lg:w-auto">
     <img
       src={slides[0].img}
       id="slide-watch"
-      class="hidden max-w-[35%] pointer-events-none mr-20"
+      class="hidden max-w-[70%] sm:max-w-[55%] lg:max-w-[35%] pointer-events-none mx-auto lg:mx-0 lg:mr-20"
       alt=""
     />
 
     <article
       id="watch-article"
-      class="hidden flex-col mr-32 max-w-100 items-start justify-center gap-4"
+      class="hidden flex-col mx-auto lg:mx-0 lg:mr-32 max-w-[90%] sm:max-w-100 items-center lg:items-start justify-center gap-4 text-center lg:text-left"
     >
       <h3 id="watch-sl-category" class="text-gold uppercase text-2">
         {slides[0].category}
       </h3>
-      <h2 id="watch-sl-title" class="text-white text-[60px]">
+      <h2 id="watch-sl-title" class="text-white text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-tight">
         {slides[0].title}
       </h2>
-      <p id="watch-sl-text" class="text-[#ffffff73] text-[16px] font-thin">
+      <p id="watch-sl-text" class="text-[14px] sm:text-[15px] lg:text-[16px] text-[#ffffff73] font-thin">
         {slides[0].text}
       </p>
       <a
         href={slides[0].link}
         id="watch-sl-link"
-        class="max-w-[16rem] text-gold border-[0.2rem] border-solid border-gold rounded-[4rem] p-[0.8rem] uppercase font-medium flex justify-center items-center"
+        class="max-w-[16rem] mx-auto lg:mx-0 text-gold border-[0.2rem] border-solid border-gold rounded-[4rem] p-[0.8rem] uppercase font-medium flex justify-center items-center"
       >
         Our collection
       </a>
@@ -78,7 +78,7 @@ const slides: Slide[] = [
   </div>
 
   <!-- Columna de botones -->
-  <div id="buttons-collumn" class="flex flex-col gap-6 mr-16"></div>
+  <div id="buttons-collumn" class="flex flex-row lg:flex-col gap-4 sm:gap-6 justify-center lg:justify-start mt-2 lg:mt-0 lg:mr-16"></div>
 </section>
 
 <script define:vars={{ slides }}>
