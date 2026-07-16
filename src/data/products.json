@@ -1,0 +1,461 @@
+[
+  {
+    "id": "classic-brown-leather",
+    "name": "Classic Brown Leather",
+    "brand": "Halcyon",
+    "background": "beige",
+    "availableColors": [
+      "Red",
+      "Green",
+      "Black"
+    ],
+    "availableSizes": [
+      "40MM",
+      "44MM",
+      "43MM"
+    ],
+    "images": {
+      "front": "/watches/beigeBg/Classic Brown Leather-front.webp",
+      "back": "/watches/beigeBg/Classic Brown Leather-back.webp",
+      "big": "/watches/beigeBg/Classic Brown Leather-big.webp"
+    },
+    "discount": {
+      "enabled": false,
+      "percentage": 15
+    },
+    "price": {
+      "from": 108,
+      "to": 400,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "stainless-steel",
+      "premium",
+      "water-resistant"
+    ],
+    "categories": [
+      "Classic"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Classic Brown Leather is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Classic Brown Leather is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Daniel Brooks",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "coronada-prosecco",
+    "name": "Coronada Prosecco",
+    "brand": "Aurelius",
+    "background": "beige",
+    "availableColors": [
+      "Black",
+      "Silver",
+      "Golden"
+    ],
+    "availableSizes": [
+      "44MM",
+      "41MM",
+      "42MM"
+    ],
+    "images": {
+      "front": "/watches/beigeBg/Coronada Prosecco-front.webp",
+      "back": "/watches/beigeBg/Coronada Prosecco-back.webp",
+      "big": "/watches/beigeBg/Coronada Prosecco-big.webp"
+    },
+    "discount": {
+      "enabled": true,
+      "percentage": 20
+    },
+    "price": {
+      "from": 105,
+      "to": 325,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "leather",
+      "premium",
+      "water-resistant"
+    ],
+    "categories": [
+      "Classic"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Coronada Prosecco is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Coronada Prosecco is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and res",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Olivia Moore",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "bronze-sage-leather",
+    "name": "Bronze Sage Leather",
+    "brand": "Aurelius",
+    "background": "beige",
+    "availableColors": [
+      "Silver",
+      "Golden",
+      "Red"
+    ],
+    "availableSizes": [
+      "41MM",
+      "43MM",
+      "45MM"
+    ],
+    "images": {
+      "front": "/watches/beigeBg/Bronze Sage Leather-front.webp",
+      "back": "/watches/beigeBg/Bronze Sage Leather-back.webp",
+      "big": "/watches/beigeBg/Bronze Sage Leather-big.webp"
+    },
+    "discount": {
+      "enabled": false,
+      "percentage": 0
+    },
+    "price": {
+      "from": 116,
+      "to": 321,
+      "currency": "EUR"
+    },
+    "rating": 3,
+    "tags": [
+      "gift",
+      "leather",
+      "stainless-steel"
+    ],
+    "categories": [
+      "Dress"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Bronze Sage Leather is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Bronze Sage Leather is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Daniel Brooks",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "coronada-greyhound",
+    "name": "Coronada Greyhound",
+    "brand": "Veritas",
+    "background": "beige",
+    "availableColors": [
+      "Black",
+      "Silver",
+      "Blue"
+    ],
+    "availableSizes": [
+      "39MM",
+      "41MM",
+      "43MM"
+    ],
+    "images": {
+      "front": "/watches/beigeBg/Coronada Greyhound-front.webp",
+      "back": "/watches/beigeBg/Coronada Greyhound-back.webp",
+      "big": "/watches/beigeBg/Coronada Greyhound-big.webp"
+    },
+    "discount": {
+      "enabled": true,
+      "percentage": 15
+    },
+    "price": {
+      "from": 180,
+      "to": 353,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "leather",
+      "gift",
+      "premium"
+    ],
+    "categories": [
+      "Chronograph"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Coronada Greyhound is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Coronada Greyhound is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and r",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 4,
+      "author": "Emma Wilson",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "revolver-bronze-age",
+    "name": "Revolver Bronze Age",
+    "brand": "Aurelius",
+    "background": "beige",
+    "availableColors": [
+      "Brown",
+      "Green",
+      "Golden"
+    ],
+    "availableSizes": [
+      "45MM",
+      "42MM",
+      "44MM"
+    ],
+    "images": {
+      "front": "/watches/beigeBg/Revolver Bronze Age-front.webp",
+      "back": "/watches/beigeBg/Revolver Bronze Age-back.webp",
+      "big": "/watches/beigeBg/Revolver Bronze Age-big.webp"
+    },
+    "discount": {
+      "enabled": true,
+      "percentage": 15
+    },
+    "price": {
+      "from": 247,
+      "to": 395,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "everyday",
+      "leather",
+      "gift"
+    ],
+    "categories": [
+      "Modern"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Revolver Bronze Age is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Revolver Bronze Age is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Daniel Brooks",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "chrono-rose-gold",
+    "name": "Chrono Rose Gold",
+    "brand": "Northline",
+    "background": "white",
+    "availableColors": [
+      "Golden",
+      "Red",
+      "Green"
+    ],
+    "availableSizes": [
+      "43MM",
+      "42MM",
+      "40MM"
+    ],
+    "images": {
+      "front": "/watches/whiteBg/Chrono Rose Gold-front.webp",
+      "back": "/watches/whiteBg/Chrono Rose Gold-back.webp",
+      "big": "/watches/whiteBg/Chrono Rose Gold-big.webp"
+    },
+    "discount": {
+      "enabled": false,
+      "percentage": 15
+    },
+    "price": {
+      "from": 240,
+      "to": 312,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "stainless-steel",
+      "everyday",
+      "premium"
+    ],
+    "categories": [
+      "Chronograph"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Chrono Rose Gold is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Chrono Rose Gold is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resis",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Olivia Moore",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "bristol-rose-gold",
+    "name": "Bristol Rose Gold",
+    "brand": "Halcyon",
+    "background": "white",
+    "availableColors": [
+      "Red",
+      "Green",
+      "Black"
+    ],
+    "availableSizes": [
+      "39MM",
+      "42MM",
+      "44MM"
+    ],
+    "images": {
+      "front": "/watches/whiteBg/Bristol Rose Gold-front.webp",
+      "back": "/watches/whiteBg/Bristol Rose Gold-back.webp",
+      "big": "/watches/whiteBg/Bristol Rose Gold-big.webp"
+    },
+    "discount": {
+      "enabled": true,
+      "percentage": 15
+    },
+    "price": {
+      "from": 225,
+      "to": 333,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "everyday",
+      "water-resistant",
+      "gift"
+    ],
+    "categories": [
+      "Modern"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Bristol Rose Gold is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Bristol Rose Gold is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and res",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 4,
+      "author": "Daniel Brooks",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "bristol-gold-link",
+    "name": "Bristol Gold Link",
+    "brand": "Aurelius",
+    "background": "white",
+    "availableColors": [
+      "Green",
+      "Brown",
+      "Silver"
+    ],
+    "availableSizes": [
+      "44MM",
+      "43MM",
+      "41MM"
+    ],
+    "images": {
+      "front": "/watches/whiteBg/Bristol Gold Link-front.webp",
+      "back": "/watches/whiteBg/Bristol Gold Link-back.webp",
+      "big": "/watches/whiteBg/Bristol Gold Link-big.webp"
+    },
+    "discount": {
+      "enabled": true,
+      "percentage": 25
+    },
+    "price": {
+      "from": 250,
+      "to": 338,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "leather",
+      "premium",
+      "gift"
+    ],
+    "categories": [
+      "Classic"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Bristol Gold Link is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Bristol Gold Link is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and res",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 5,
+      "author": "Emma Wilson",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  },
+  {
+    "id": "bristol-silver-link",
+    "name": "Bristol Silver Link",
+    "brand": "Northline",
+    "background": "white",
+    "availableColors": [
+      "Brown",
+      "Silver",
+      "Blue"
+    ],
+    "availableSizes": [
+      "44MM",
+      "42MM",
+      "43MM"
+    ],
+    "images": {
+      "front": "/watches/whiteBg/Bristol Silver Link-front.webp",
+      "back": "/watches/whiteBg/Bristol Silver Link-back.webp",
+      "big": "/watches/whiteBg/Bristol Silver Link-big.webp"
+    },
+    "discount": {
+      "enabled": false,
+      "percentage": 10
+    },
+    "price": {
+      "from": 248,
+      "to": 285,
+      "currency": "EUR"
+    },
+    "rating": 4,
+    "tags": [
+      "everyday",
+      "leather",
+      "stainless-steel"
+    ],
+    "categories": [
+      "Classic"
+    ],
+    "shortDescription": "A refined everyday watch with premium materials and reliable performance.",
+    "description": "Bristol Silver Link is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and resistance to daily use. Attention to detail can be seen in the hands, markers, crown and strap integration, producing a refined appearance from every angle. Built for comfort and long-term reliability, this model combines timeless styling with modern manufacturing standards, making it an ideal choice for collectors and first-time buyers alike. Bristol Silver Link is designed for everyday wear while maintaining the proportions and finishing expected from a premium timepiece. Its balanced dial, durable construction, reliable movement and carefully selected materials create a versatile watch that transitions naturally from business meetings to weekend outings. The case offers excellent wrist presence without feeling oversized, while the crystal provides clarity and",
+    "style": "Contemporary Dress",
+    "movement": "Battery Powered 5 Hand Miyota with center chronograph hand",
+    "case": "Matte Stainless Steel",
+    "review": {
+      "enabled": true,
+      "stars": 4,
+      "author": "Daniel Brooks",
+      "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
+      "date": "May 10, 2019"
+    }
+  }
+]

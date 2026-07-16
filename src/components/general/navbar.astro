@@ -1,33 +1,47 @@
-<header
-  class="flex items-center justify-between bg-black text-white py-6 px-5 md:px-10 font-niveau-grotesk"
+---
+/*I get the page URL and check if it's the product page*/
+const pathname = Astro.url.pathname;
+const isProduct = pathname.startsWith("/product/");
+---
+
+<!-- I use class:list because class does not accept more than one parameter -->
+<header id="navbar"
+  class:list={[
+    "flex items-center justify-between bg-transparent py-6 px-5 md:px-10 font-niveau-grotesk fixed w-full z-50 transition-all ease-out duration-300 border-b border-gray/30",
+    isProduct ? "text-black" : "text-white"
+  ]}
 >
+
+<!-- Logo -->
   <a href="/">
     <img
-      src="/src/assets/images/hongo_logo.png"
+      src={isProduct ? "/src/assets/images/logoBlack.png" : "/src/assets/images/hongo_logo.png"}
       alt="Hongo"
       id="main_logo"
       class="h-8 md:h-auto"
     />
   </a>
 
+<!-- Pages and their links-->
   <nav class="hidden md:block">
+    <!-- Check if the URL is the same as the button's URL for each button to see if it should be underlined or not. -->
     <ul class="flex gap-6">
-      <li><a href="/">Home</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/size">Size guide</a></li>
-      <li><a href="/locator">Store locator</a></li>
-      <li><a href="/shipping">Shipping</a></li>
-      <li><a href="/contact">Contact us</a></li>
+      <li><a href="/" class={pathname === "/" ? "border-b" : "hover:border-b"}>Home</a></li>
+      <li><a href="/shop" class={pathname === "/shop" ? "border-b" : "hover:border-b"}>Shop</a></li>
+      <li><a href="/size" class={pathname === "/size" ? "border-b" : "hover:border-b"}>Size guide</a></li>
+      <li><a href="/locator" class={pathname === "/locator" ? "border-b" : "hover:border-b"}>Store locator</a></li>
+      <li><a href="/shipping" class={pathname === "/shipping" ? "border-b" : "hover:border-b"}>Shipping</a></li>
+      <li><a href="/contact" class={pathname === "/contact" ? "border-b" : "hover:border-b"}>Contact us</a></li>
     </ul>
   </nav>
-
+<!-- Mobile menu -->
   <ul class="flex items-center gap-4">
     <li class="md:hidden">
       <button aria-label="Open menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </li>
-
+<!-- The other icons-->
     <li><i class="fa-solid fa-magnifying-glass"></i></li>
 
     <li class="hidden md:block">
@@ -41,3 +55,28 @@
     <li><i class="fa-solid fa-cart-shopping"></i></li>
   </ul>
 </header>
+
+<!-- Here I use `define:vars={{ isProduct }}` to bring what was previously processed from the server side to the script -->
+<script define:vars={{ isProduct }}>
+
+/*Here I check if the user has scrolled down or not to change the navbar state, always ensuring that it maintains readability against the background.*/
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("navbar")
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > lastScrollY) {
+    navbar.classList.add("-translate-y-full");
+  } else if (window.scrollY < lastScrollY) {
+    navbar.classList.remove("-translate-y-full");
+  }
+  if(window.scrollY == 0){
+    navbar.classList.add("bg-transparent")
+    isProduct ? navbar.classList.remove("bg-white") : navbar.classList.remove("bg-black")
+    
+  } else{
+    navbar.classList.remove("bg-transparent")
+    isProduct ? navbar.classList.add("bg-white") : navbar.classList.add("bg-black")
+  }
+  lastScrollY = window.scrollY;
+});
+</script>

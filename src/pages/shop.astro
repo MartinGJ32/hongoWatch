@@ -1,4 +1,5 @@
 ---
+import data from "../data/products.json";
 import Layout from "../layouts/Layout.astro";
 import teamImg from "../assets/images/contact/watch-the-team-01.jpg";
 import womanBeachImg from "../assets/images/contact/contact-classic-img-22-1.jpg";
@@ -6,15 +7,25 @@ import beachImg from "../assets/images/contact/contact-classic-img-20.jpg";
 import Hero from "../components/general/hero.astro";
 import Watch from "../components/shop/watch.astro";
 import PriceRange from "../components/shop/priceRange.astro";
+
+let filtredWatches = [];
+
+for (let i = 0; i < 4; i++) {
+  filtredWatches.push(
+    ...data.filter((product) => product.background === "white"),
+  );
+}
 ---
 
-<Layout>
+<Layout name="Hongo - Shop">
+  <!--heroe section -->
   <Hero
     title="Shop classic"
     description="we provide latest fashion trends"
     image="src\assets\images\shop\watch-shop-header-bg.jpg"
   />
 
+  <!--breadcrumbs section -->
   <section
     class="flex w-full h-auto bg-white py-3 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 border-b-2 border-gray/20"
   >
@@ -29,12 +40,18 @@ import PriceRange from "../components/shop/priceRange.astro";
       >
     </div>
   </section>
+
+  <!--shop section -->
   <section
     class="w-full h-auto bg-white py-10 px-4 sm:px-6 md:py-16 md:px-10 lg:py-24 lg:px-20 xl:py-30 xl:px-30 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 lg:gap-10"
   >
-    <div class="flex flex-col gap-4 text-[13px]">
+    <div class="flex flex-col gap-4 text-[13px]">´
+
+
+      <!--color section -->
       <div class="flex flex-col gap-4 text-[13px] border-gray/20 border-b pb-8">
         <h4>Filter by color</h4>
+
         <ul>
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
@@ -53,7 +70,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-blue-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#5E779E] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -67,7 +84,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-amber-800 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#8C7563] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -81,7 +98,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-yellow-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#B89A68] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -95,7 +112,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-green-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#718A79] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -109,7 +126,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-red-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#B95B5B] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -123,7 +140,7 @@ import PriceRange from "../components/shop/priceRange.astro";
           <li class="flex justify-between">
             <a href="" class="group flex gap-2 items-center">
               <span
-                class="bg-gray-400 rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
+                class="bg-[#B8BEC7] rounded-full h-4 w-4 flex justify-center items-center text-transparent group-hover:text-white"
               >
                 <i class="fa-solid fa-check text-[8px]"></i>
               </span>
@@ -136,6 +153,9 @@ import PriceRange from "../components/shop/priceRange.astro";
         </ul>
       </div>
 
+
+
+      <!-- size section -->
       <div class="flex flex-col gap-4 text-[13px] border-gray/20 border-b pb-8">
         <h4>Filter by size</h4>
 
@@ -212,14 +232,22 @@ import PriceRange from "../components/shop/priceRange.astro";
         </ul>
       </div>
 
+
+
+
+      <!--price range section -->
       <div class="flex flex-col gap-4 text-[13px] border-gray/20 border-b pb-8">
-        <h4>Filter by size</h4>
+        <h4>Filter by price</h4>
 
         <PriceRange />
       </div>
 
+
+
+
+      <!--calification section -->
       <div class="flex flex-col gap-4 text-[13px] border-gray/20 border-b pb-8">
-        <h4>Filter by size</h4>
+        <h4>Filter by calification</h4>
 
         <ul>
           <li class="flex items-center justify-between">
@@ -280,8 +308,13 @@ import PriceRange from "../components/shop/priceRange.astro";
         </ul>
       </div>
 
+
+
+
+
+      <!-- tags section -->
       <div class="flex flex-col gap-4 text-[13px] border-gray/20 border-b pb-8">
-        <h4>Filter by size</h4>
+        <h4>Filter by tags</h4>
 
         <div class="flex flex-wrap gap-2 w-full lg:max-w-40">
           <a
@@ -362,37 +395,50 @@ import PriceRange from "../components/shop/priceRange.astro";
       />
     </div>
 
+
+
+    <!-- filters section -->
     <div class="flex flex-col pb-8">
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-2 justify-between items-start sm:items-center pb-10">
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-2 justify-between items-start sm:items-center pb-10"
+      >
         <div class="flex gap-2 items-center justify-center flex-wrap">
           <p
             class="px-2 border-r-2 border-gray/50 text-[14px] max-h-4 flex items-center text-gray"
           >
             Showing 1–12 of 114 results
-          </p><div class="flex gap-2">
-            <button class="flex gap-1"
-              ><span
-                class="w-2 h-3 bg-transparent border border-gray/80 text-transparent block"
-              ></span><span
-                class="w-2 h-3 bg-transparent border border-gray/80 text-transparent block"
-              ></span></button
+          </p>
+          <div class="flex gap-2">
+            <button
+              type="button"
+              id="columns-2-button"
+              data-columns="2"
+              class="view-columns-button flex gap-1"
             >
-            <button class="flex gap-1"
-              ><span
-                class="w-2 h-3 bg-transparent border border-gray/80 text-transparent block"
-              ></span><span
-                class="w-2 h-3 bg-transparent border border-gray/80 text-transparent block"
-              ></span><span
-                class="w-2 h-3 bg-transparent border border-gray/80 text-transparent block"
-              ></span></button
+              <span class="w-2 h-3 border border-gray/80 bg-transparent block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-gray/80 bg-transparent block transition-all duration-300 ease-out"></span>
+            </button>
+            <button
+              type="button"
+              id="columns-3-button"
+              data-columns="3"
+              class="view-columns-button flex gap-1"
             >
-            <button class="flex gap-1"
-              ><span class="w-2 h-3 bg-gray/80 text-transparent block"
-              ></span><span class="w-2 h-3 bg-gray/80 text-transparent block"
-              ></span><span class="w-2 h-3 bg-gray/80 text-transparent block"
-              ></span><span class="w-2 h-3 bg-gray/80 text-transparent block"
-              ></span></button
+              <span class="w-2 h-3 border border-gray/80 bg-transparent block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-gray/80 bg-transparent block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-gray/80 bg-transparent block transition-all duration-300 ease-out"></span>
+            </button>
+            <button
+              type="button"
+              id="columns-4-button"
+              data-columns="4"
+              class="view-columns-button flex gap-1"
             >
+              <span class="w-2 h-3 border border-transparent bg-gray/80 block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-transparent bg-gray/80 block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-transparent bg-gray/80 block transition-all duration-300 ease-out"></span>
+              <span class="w-2 h-3 border border-transparent bg-gray/80 block transition-all duration-300 ease-out"></span>
+            </button>
           </div>
         </div>
         <select
@@ -411,20 +457,28 @@ import PriceRange from "../components/shop/priceRange.astro";
           <option value="price-desc">Sort by price: high to low</option></select
         >
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8">
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
-        <Watch />
+
+
+      <!-- watches section -->
+      <div
+        id="products-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 transition-all duration-300 ease-out"
+      >
+        {
+          filtredWatches.map((product) => (
+            <Watch
+              name={product.name}
+              priceFrom={product.price.from}
+              priceTo={product.price.to}
+              id={product.id}
+              img={product.images.front}
+            />
+          ))
+        }
       </div>
+
+
+      <!--pages section -->
       <nav class="w-full flex flex-wrap justify-center items-center gap-3 py-8">
         <a
           href=""
@@ -467,3 +521,58 @@ import PriceRange from "../components/shop/priceRange.astro";
     </div>
   </section>
 </Layout>
+
+<script>
+  // Botones que eligen cuántas columnas se ven en la grilla de productos
+  const productsGrid = document.getElementById("products-grid");
+  const columnButtons = document.querySelectorAll(".view-columns-button");
+
+  // clases de grid-cols que le corresponden a cada opción (mobile-first:
+  // siempre 1 columna en pantallas chicas, y a partir de ahí escala hasta
+  // el número elegido)
+  const gridColumnsMap = {
+    2: ["grid-cols-1", "sm:grid-cols-2"],
+    3: ["grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3"],
+    4: ["grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3", "xl:grid-cols-4"],
+  };
+
+  // todas las clases posibles, para sacarlas antes de poner las nuevas
+  const allGridClasses = [
+    "grid-cols-1",
+    "sm:grid-cols-2",
+    "lg:grid-cols-3",
+    "xl:grid-cols-4",
+  ];
+
+  function setColumns(columns) {
+    if (!productsGrid) return;
+
+    productsGrid.classList.remove(...allGridClasses);
+    productsGrid.classList.add(...gridColumnsMap[columns]);
+  }
+
+  function setActiveButton(activeButton) {
+    columnButtons.forEach(function (button) {
+      const isActive = button === activeButton;
+      const spans = button.querySelectorAll("span");
+
+      spans.forEach(function (span) {
+        if (isActive) {
+          span.classList.remove("border-gray/80", "bg-transparent");
+          span.classList.add("border-transparent", "bg-gray/80");
+        } else {
+          span.classList.remove("border-transparent", "bg-gray/80");
+          span.classList.add("border-gray/80", "bg-transparent");
+        }
+      });
+    });
+  }
+
+  columnButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const columns = button.dataset.columns;
+      setColumns(columns);
+      setActiveButton(button);
+    });
+  });
+</script>

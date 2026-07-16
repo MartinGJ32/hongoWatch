@@ -11,26 +11,33 @@ interface Slide {
 const slides: Slide[] = [
   {
     img: "/src/assets/images/watch-0011.png",
-    category: "ASEREJE",
+    category: "LES ORIGINALES",
     title: "High quality stylish watches",
-    text: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-    link: "#",
+    text: "Made from 316L stainless steel, this classic is intended to stay as such and is designed.",
+    link: "/shop",
   },
   {
-    img: "/src/assets/images/watch-0011.png",
-    category: "ASEREJE2",
+    img: "/src/assets/images/watch-003.png",
+    category: "LES ORIGINALES",
     title: "Spending time you feel great",
     text: "Made from 316L stainless steel, this classic is intended to stay as such and is designed.",
-    link: "#",
+    link: "/shop",
   },
+  {
+    img: "/src/assets/images/watch-002.png",
+    category: "LES ORIGINALES",
+    title: "Hongo of your time a planet ",
+    text: "Made from 316L stainless steel, this classic is intended to stay as such and is designed.",
+    link: "/shop",
+  }
 ];
 ---
 
 <section
   id="frs-slider"
-  class="min-h-[550px] sm:min-h-[650px] lg:h-[90vh] w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center bg-[radial-gradient(#3b322c,#1b1513)] py-14 lg:py-0 px-6 lg:px-0 gap-8 lg:gap-0"
+  class="min-h-[550px] sm:min-h-[650px] lg:h-[100vh] w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center bg-[radial-gradient(#3b322c,#1b1513)] py-14 lg:py-0 px-6 lg:px-0 gap-8 lg:gap-0"
 >
-  <!-- Columna redes sociales -->
+  <!-- Social medias collumn -->
   <div class="hidden lg:flex flex-col items-center justify-center ml-16 text-white">
     <ul class="list-none flex flex-col items-center gap-4 mb-8">
       <li><i class="fa-brands fa-facebook-f"></i></li>
@@ -45,7 +52,7 @@ const slides: Slide[] = [
     </h3>
   </div>
 
-  <!-- Contenido del slide -->
+  <!-- Slide contemn -->
   <div class="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0 w-full lg:w-auto">
     <img
       src={slides[0].img}
@@ -58,7 +65,7 @@ const slides: Slide[] = [
       id="watch-article"
       class="hidden flex-col mx-auto lg:mx-0 lg:mr-32 max-w-[90%] sm:max-w-100 items-center lg:items-start justify-center gap-4 text-center lg:text-left"
     >
-      <h3 id="watch-sl-category" class="text-gold uppercase text-2">
+      <h3 id="watch-sl-category" class="text-gold uppercase text-2 decor-line">
         {slides[0].category}
       </h3>
       <h2 id="watch-sl-title" class="text-white text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-tight">
@@ -70,21 +77,23 @@ const slides: Slide[] = [
       <a
         href={slides[0].link}
         id="watch-sl-link"
-        class="max-w-[16rem] mx-auto lg:mx-0 text-gold border-[0.2rem] border-solid border-gold rounded-[4rem] p-[0.8rem] uppercase font-medium flex justify-center items-center"
+        class=" text-gold border-[2px] border-solid border-gold rounded-[4rem] py-[8px] px-[20px] uppercase font-medium flex justify-center items-center text-[11px]"
       >
         Our collection
       </a>
     </article>
   </div>
 
-  <!-- Columna de botones -->
+  <!-- buttons collumn -->
   <div id="buttons-collumn" class="flex flex-row lg:flex-col gap-4 sm:gap-6 justify-center lg:justify-start mt-2 lg:mt-0 lg:mr-16"></div>
 </section>
 
 <script define:vars={{ slides }}>
+  /*I bring slides from the server*/
   let currentIndex = 0;
   let buttonsArray = [];
 
+   /*I bring the elements by DOM*/
   const slideImg = document.getElementById("slide-watch");
   const slideArticle = document.getElementById("watch-article");
   const slideCategory = document.getElementById("watch-sl-category");
@@ -97,7 +106,9 @@ const slides: Slide[] = [
   const INACTIVE_CLASSES = ["text-[rgba(255,255,255,0.536)]"];
   const ACTIVE_CLASSES = ["text-white", "line-through"];
 
+  /*I create the buttons*/
   function createButtons() {
+    /*_ stands for each slide, but since I'm not using it, I'm assigning it the name _ because it's a conviction*/
     slides.forEach((_, i) => {
       const button = document.createElement("button");
       button.classList.add(...BASE_BUTTON_CLASSES, ...INACTIVE_CLASSES);
@@ -128,6 +139,7 @@ const slides: Slide[] = [
     });
   }
 
+  /*Slides fuction*/
   function showSlide() {
     const item = slides[currentIndex];
     slideImg.classList.remove("hidden");
@@ -138,13 +150,39 @@ const slides: Slide[] = [
     slideTitle.innerText = item.title;
     slideText.innerText = item.text;
     slideLink.setAttribute("href", item.link);
+    animateSlide();
   }
+  /*Animation fuction*/
+    function animateSlide() {
+  slideImg.classList.remove(
+    "animate-slide-in"
+  );
+
+  slideArticle.classList.remove(
+    "animate-slide-up"
+  );
+
+  /*forces the page to restart the animation*/
+  void slideImg.offsetWidth;
+
+  slideImg.classList.add(
+    "animate-slide-in"
+  );
+
+  slideArticle.classList.add(
+    "animate-slide-up"
+  );
+}
 
   function next() {
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide();
     setActiveButton();
+
   }
+
+
+
 
   createButtons();
   showSlide();

@@ -1,15 +1,33 @@
 <button
-  class="hidden md:block fixed top-[90%] right-4 hover:right-2 -rotate-90 text-[15px] hover:text-[18px] text-gray/50 hover:text-gray bg-transparent border-none transition-all duration-300 ease-out"
-  id="up-button">Scroll up <i>🡢</i></button
+  class="hidden md:block fixed top-[90%] right-4 hover:right-3.5 -rotate-90 text-[15px] text-gray/50 hover:text-gold bg-transparent border-none transition-all duration-300 ease-out group opacity-0"
+  id="up-button"
+  >Scroll up <i class="group-hover:pl-1 transition-all duration-300 ease-out"
+    >🡢</i
+  ></button
 >
 
 <script>
   let upButton = document.getElementById("up-button");
 
   function scrollUp() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   upButton.addEventListener("click", scrollUp);
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY == 0) {
+      upButton.classList.add("opacity-0");
+      upButton.classList.remove("opacity-100");
+    } else {
+      upButton.classList.remove("opacity-0");
+      upButton.classList.add("opacity-100");
+    }
+    lastScrollY = window.scrollY;
+  });
 </script>

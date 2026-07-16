@@ -1,0 +1,585 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import data from "../../data/products.json";
+import { render } from "astro:content";
+
+export function getStaticPaths() {
+  return data.map((product) => ({
+    params: {
+      id: product.id,
+    },
+  }));
+}
+
+const { id } = Astro.params;
+const renderWatch = data.find((product) => product.id === id);
+
+if (!renderWatch) {
+  throw new Error(`Product "${id}" not found`);
+}
+
+const {
+  name,
+  brand,
+  rating,
+  description,
+  shortDescription: shortDescp,
+  style,
+  movement,
+  case: caseW,
+  images,
+  categories,
+  tags,
+  price,
+  review,
+  availableColors,
+  availableSizes,
+} = renderWatch;
+
+const { big: imgBig } = images;
+const { from: priceFrom, to: priceTo } = price;
+const category = categories.join(", ");
+const reviews = review?.enabled ? [review] : [];
+
+
+const colorSwatchClasses = {
+  Black:
+    "block w-[31px] h-[20px] bg-[#4F5968] border border-[#434B58] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#4F5968]/60",
+
+  Blue:
+    "block w-[31px] h-[20px] bg-[#5E779E] border border-[#526987] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#5E779E]/60",
+
+  Brown:
+    "block w-[31px] h-[20px] bg-[#8C7563] border border-[#796454] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#8C7563]/60",
+
+  Green:
+    "block w-[31px] h-[20px] bg-[#718A79] border border-[#627767] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#718A79]/60",
+
+  Red:
+    "block w-[31px] h-[20px] bg-[#B95B5B] border border-[#A34E4E] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B95B5B]/60",
+
+  Silver:
+    "block w-[31px] h-[20px] bg-[#B8BEC7] border border-[#A5ACB7] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B8BEC7]/60",
+
+  Golden:
+    "block w-[31px] h-[20px] bg-[#B89A68] border border-[#A88A5C] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B89A68]/60",
+};
+const defaultSwatchClass =
+  "block w-[31px] h-[20px] bg-gray-200 border border-gray-300 cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-gray-300/60";
+---
+
+<Layout name={ `Hongo - ${renderWatch.name}`}>
+  <section
+  
+    class="bg-white flex flex-col lg:flex-row w-full justify-center h-auto py-25 px-4 gap-8 sm:px-6 sm:py-10 md:px-10 md:py-24 md:gap-10 lg:items-start lg:py-25 lg:px-70 lg:gap-17"
+  >
+
+
+
+
+  <!-- Product images and form -->
+    <div
+      class="flex flex-col-reverse items-center gap-4 w-full lg:flex-row lg:items-start lg:gap-5 lg:w-auto"
+      id="imgsWatchCointainer"
+    >
+      <div
+        class="flex flex-row gap-3 overflow-x-auto w-full h-full justify-center pb-1 lg:flex-col lg:gap-8 lg:w-auto lg:overflow-visible lg:justify-start lg:pb-0"
+      >
+        <img
+          src={renderWatch.images.front}
+          alt="Image front"
+          class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
+        />
+        <img
+          src={renderWatch.images.back}
+          alt="Image back"
+          class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
+        />
+        <img
+          src={renderWatch.images.big}
+          alt="Image big"
+          class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
+        />
+      </div>
+      <div
+        class="flex overflow-hidden w-full max-w-[320px] max-h-[400px] mx-auto sm:max-w-[420px] sm:max-h-[520px] md:max-w-[480px] md:max-h-[600px] lg:max-w-[539px] lg:max-h-[498px] lg:mx-0"
+      >
+        <img
+          src={renderWatch.images.front}
+          id="zoomContainer"
+          alt="Image 1"
+          class="w-full h-[498px] object-cover cursor-crosshair"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-5 w-full lg:flex-1">
+      <div class="flex gap-2 flex-wrap">
+        <a href="" class="text-[10px] text-gray uppercase">home</a>
+        <span class="text-[10px] text-gray"> > </span>
+        <a href="" class="text-[10px] text-gray uppercase">product</a><span
+          class="text-[10px] text-gray"
+        >
+          >
+        </span>
+        <a href="" class="text-[10px] text-gray uppercase">{category}</a>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-between items-start w-full gap-3 border-b pb-5 border-gray/20"
+      >
+        <div class="flex gap-3">
+          <div class="flex flex-col items-start">
+            <p class="text-[20px]">{name}</p>
+            <p class="text-[14px]">€{priceFrom} – €{priceTo}</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="flex pt-2">
+            {Array.from({ length: 5 }).map((_, index) => (
+              index < rating ? (
+                <i class="fa-solid fa-star text-orange-400 text-[11px]"></i>
+              ) : (
+                <i class="fa-regular fa-star text-orange-400 text-[11px]"></i>
+              )
+            ))}</span
+          >
+          <p class="text-[11px]">
+            SKU: <span class="text-gray">{id}</span>
+          </p>
+        </div>
+      </div>
+      <div class="flex border-b pb-5 border-gray/20">
+        <p class="text-[14px] text-gray">
+          {shortDescp}
+        </p>
+      </div>
+
+      <form id="productOptionsForm" class="flex flex-col gap-5 border-b pb-5 border-gray/20">
+        <div>
+          <div class="flex gap-2 items-center flex-wrap">
+            <h4 class="uppercase text-[11px]">Color</h4>
+            <div class="flex gap-2" role="radiogroup" aria-label="Color">
+              {availableColors.map((color, index) => (
+                <label class={colorSwatchClasses[color] ?? defaultSwatchClass}>
+                  <input
+                    type="radio"
+                    name="color"
+                    value={color.toLowerCase()}
+                    class="sr-only"
+                    checked={index === 0}
+                  />
+                </label>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 items-center flex-wrap gap-y-2">
+          <h4 class="uppercase text-[11px]">Size</h4>
+          <div class="flex gap-2" role="radiogroup" aria-label="Size">
+            {availableSizes.map((size, index) => (
+              <label
+                class="flex items-center justify-center px-5 border border-gray/50 cursor-pointer uppercase text-[11px] text-gray has-[:checked]:border-black has-[:checked]:text-black"
+              >
+                <input type="radio" name="size" value={size} class="sr-only" checked={index === 0} />{size}
+              </label>
+            ))}
+          </div>
+
+          <a href="" class="uppercase text-[11px] underline">size guide</a>
+        </div>
+
+        <div class="flex gap-4 flex-wrap gap-y-3">
+          <div class="flex items-center">
+            <label for="quantity" class="sr-only">Cantidad</label>
+            <input
+              id="quantity"
+              name="quantity"
+              type="number"
+              min="1"
+              value="1"
+              class="w-[39px] h-[39px] border border-gray/50 flex justify-center items-center text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <div class="flex flex-col">
+              <button
+                type="button"
+                id="qtyIncrease"
+                class="w-[20px] h-[20px] border border-gray/50 flex justify-center items-center"
+                >+</button
+              >
+              <button
+                type="button"
+                id="qtyDecrease"
+                class="w-[20px] h-[20px] border border-gray/50 flex justify-center items-center"
+                >-</button
+              >
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="flex items-center justify-center px-[25px] py-[8px] uppercase text-[14px] text-white bg-black border-2 border-transparent hover:text-black hover:bg-transparent hover:border-black"
+            >add to cart</button
+          >
+        </div>
+        <div class="flex items-center">
+          <i class="fa-regular fa-heart text-[10px] text-gray"></i>
+          <button type="button" class="text-[10px] text-gray uppercase">Add to Wishlist</button>
+        </div>
+      </form>
+
+      <div class="flex flex-col gap-4 items-start w-full sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div class="felx flex-col space-y-2">
+          <p class="text-[11px] uppercase">
+            Category: <a href="" class="text-gray hover:text-gold"
+              >{category}</a
+            >
+          </p>
+          <p class="text-[11px] uppercase">
+            tag: {tags && tags.map((tag, index) => (
+              <>
+                <a href="" class="text-gray hover:text-gold">{tag}</a>{index < tags.length - 1 && ", "}
+              </>
+            ))}
+          </p>
+          <p class="text-[11px] uppercase">
+            brand: <a href="" class="text-gray hover:text-gold">{brand}</a>
+          </p>
+        </div><div class="flex gap-2">
+          <a href="#"><i class="fa-brands fa-facebook-f text-[11px]"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter text-[11px]"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in text-[11px]"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest-p text-[11px]"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+  <!-- Product info -->
+  <section
+    class="bg-white flex flex-col w-full justify-center items-center h-auto py-10 px-4 gap-8 sm:px-6 sm:py-14 md:px-10 md:py-16 md:gap-10 lg:py-20 lg:px-45 lg:gap-15"
+  >
+    <div class="flex gap-4 overflow-x-auto whitespace-nowrap w-full justify-start pb-1 sm:justify-center sm:gap-6 sm:overflow-visible md:gap-8 lg:gap-10">
+      <button id="descriptionBtn" data-target="descriptionContent" class="text-[13px] uppercase border-b"
+        >description</button
+      ><button id="additionalInfoBtn" data-target="additionalInfoContent" class="text-[13px] uppercase text-gray"
+        >Additional information</button
+      ><button id="reviewsBtn" data-target="reviewsContent" class="text-[13px] uppercase text-gray"
+        >Reviews ({reviews.length})</button
+      >
+    </div>
+
+    <div
+      id="infoContainer"
+      class="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 border-b border-gray/20 pb-10 sm:pb-14 md:pb-20 lg:pb-25 w-full"
+    >
+      <!-- DESCRIPTION TAB -->
+      <div id="descriptionContent" class="tab-content flex flex-col lg:flex-row items-start gap-6 sm:gap-8 w-full">
+        <div class="flex flex-col flex-1 min-w-0 gap-10">
+          <p class="text-gray text-[14px]">
+            {description}
+          </p>
+          <div>
+            <h4 class="text-[14px]">01. Matte gunmetal stainless steel link</h4>
+            <p class="text-gray text-[14px]">
+              Any agreement with should have strong verification and enforcement
+              safeguards to prevent future cheating.lorem Ipsum is simply dummy
+              text of industry
+            </p>
+          </div>
+          <div>
+            <h4 class="text-[14px]">02. Brushed taupe stainless steel</h4>
+            <p class="text-gray text-[14px]">
+              Any agreement with should have strong verification and enforcement
+              safeguards to prevent future cheating.lorem Ipsum is simply dummy
+              text of industry
+            </p>
+          </div>
+          <div>
+            <h4 class="text-[14px]">03. Gunmetal hands and black markers</h4>
+            <p class="text-gray text-[14px]">
+              Any agreement with should have strong verification and enforcement
+              safeguards to prevent future cheating.lorem Ipsum is simply dummy
+              text of industry
+            </p>
+          </div>
+        </div>
+        <img
+          src={imgBig}
+          alt=""
+          class="w-full flex-1 min-w-0 max-h-[280px] object-cover sm:max-h-[360px] md:max-h-[420px] lg:max-h-[520px] lg:max-w-[550px]"
+        />
+      </div>
+
+      <!-- ADDITIONAL INFO TAB -->
+      <div id="additionalInfoContent" class="tab-content hidden flex-1 w-full">
+        <table class="w-full table-fixed text-[12px] sm:text-[13px] md:text-[14px]">
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <th class="w-2/5 py-4 pl-2 text-left font-semibold align-top sm:w-1/3">Color</th>
+              <td class="py-4 text-gray"><p>{availableColors.join(", ")}</p></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <th class="py-4 text-left font-semibold align-top pl-2">Size</th>
+              <td class="py-4 text-gray"><p>{availableSizes.join(", ")}</p></td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <th class="py-4 text-left font-semibold align-top pl-2">Style/Type</th>
+              <td class="py-4 text-gray"><p>{style}</p></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <th class="py-4 text-left font-semibold align-top pl-2">Movement</th>
+              <td class="py-4 text-gray"><p>{movement}</p></td>
+            </tr>
+            <tr>
+              <th class="py-4 text-left font-semibold align-top pl-2">Case</th>
+              <td class="py-4 text-gray"><p>{caseW}</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- REVIEWS TAB -->
+      <div id="reviewsContent" class="tab-content hidden flex flex-col gap-5 w-full">
+        <div id="reviews" class="flex flex-col space-y-6">
+          {reviews && reviews.map((review) => (
+            <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
+              <div class="flex gap-3">
+                <img src="https://picsum.photos/200" alt="" class="w-[65px] h-[65px] rounded-full" />
+                <div class="flex flex-col">
+                  <p class="text-[13px]">{review.author} <span class="text-gray">– {review.date}</span></p>
+                  <p class="text-[14px]">{review.text}</p>
+                </div>
+              </div>
+              <span class="flex">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  index < review.stars ? (
+                    <i class="fa-solid fa-star text-orange-400 text-[12px]"></i>
+                  ) : (
+                    <i class="fa-regular fa-star text-orange-400 text-[12px]"></i>
+                  )
+                ))}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <h4 class="text-[14px] uppercase">Add a review</h4>
+          <p class="text-[12px] text-gray">Your email address will not be published. Required fields are marked *</p>
+          <form id="formulario" action="" class="flex flex-col gap-4 mt-6 w-full sm:gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div class="flex flex-col gap-2">
+                <label for="name" class="text-[12px] font-medium">Name*</label>
+                <input id="name" name="name" type="text" required
+                  class="border border-gray/30 px-4 py-3 outline-none focus:border-black w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="email" class="text-[12px] font-medium">Email*</label>
+                <input id="email" name="email" type="email" required
+                  class="border border-gray/30 px-4 py-3 outline-none focus:border-black w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]" />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+              <label class="text-[12px] font-medium">Your rating</label>
+              <div class="flex flex-col gap-3">
+                <div id="rating" class="flex gap-1">
+                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="1">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="2">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="3">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="4">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="5">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                </div>
+                <input type="hidden" name="rating" id="ratingValue" required />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="review" class="text-[12px] font-medium">Your review*</label>
+              <textarea id="review" name="review" rows="6" required
+                class="border border-gray/30 px-4 py-3 resize-none outline-none focus:border-black w-full max-w-[1140px] max-h-[105px] px-[15px] py-[9px]"></textarea>
+            </div>
+
+            <button type="submit"
+              class="self-start w-full bg-black text-white uppercase text-[13px] px-[20px] py-[3px] border border-transparent hover:bg-transparent hover:text-black hover:border-black transition-all ease-out duration-300 sm:w-auto">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  
+  function initImageZoom() {
+    const zoomContainer = document.getElementById("zoomContainer");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    zoomContainer.addEventListener("mousemove", (e) => {
+      const rect = zoomContainer.getBoundingClientRect();
+
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      zoomContainer.style.transformOrigin = `${x}% ${y}%`;
+      zoomContainer.style.transform = "scale(2)";
+    });
+
+    zoomContainer.addEventListener("mouseleave", () => {
+      zoomContainer.style.transform = "scale(1)";
+      zoomContainer.style.transformOrigin = "center";
+    });
+
+    thumbnails.forEach((img) => {
+      img.addEventListener("click", () => {
+        zoomContainer.src = img.src;
+      });
+    });
+  }
+
+  
+  function initProductOptions() {
+    const quantityInput = document.getElementById("quantity");
+    const qtyIncrease = document.getElementById("qtyIncrease");
+    const qtyDecrease = document.getElementById("qtyDecrease");
+
+    qtyIncrease.addEventListener("click", () => {
+      quantityInput.value = Number(quantityInput.value) + 1;
+    });
+
+    qtyDecrease.addEventListener("click", () => {
+      const current = Number(quantityInput.value);
+      if (current > 1) quantityInput.value = current - 1;
+    });
+
+    const productOptionsForm = document.getElementById("productOptionsForm");
+    productOptionsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(productOptionsForm);
+      console.log("Agregado al carrito:", Object.fromEntries(formData));
+    });
+  }
+
+  function initTabs() {
+    const descriptionBtn = document.getElementById("descriptionBtn");
+    const additionalInfoBtn = document.getElementById("additionalInfoBtn");
+    const reviewsBtn = document.getElementById("reviewsBtn");
+    const tabButtons = [descriptionBtn, additionalInfoBtn, reviewsBtn];
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    function setActiveTab(activeBtn) {
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("border-b");
+        btn.classList.add("text-gray");
+      });
+      activeBtn.classList.remove("text-gray");
+      activeBtn.classList.add("border-b");
+
+      tabContents.forEach((content) => content.classList.add("hidden"));
+
+      const target = document.getElementById(activeBtn.dataset.target);
+      target.classList.remove("hidden");
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => setActiveTab(btn));
+    });
+  }
+
+  function initReviewForm() {
+    const stars = document.querySelectorAll(".rating-star");
+    const input = document.getElementById("ratingValue");
+    const form = document.getElementById("formulario");
+    let selected = 0;
+
+    function paint(value) {
+      stars.forEach((star, index) => {
+        if (index < value) {
+          star.classList.remove("text-transparent");
+          star.classList.add("text-orange-400");
+        } else {
+          star.classList.remove("text-orange-400");
+          star.classList.add("text-transparent");
+        }
+      });
+    }
+
+    stars.forEach((star, index) => {
+      star.addEventListener("mouseenter", () => paint(index + 1));
+      star.addEventListener("mouseleave", () => paint(selected));
+      star.addEventListener("click", () => {
+        selected = index + 1;
+        input.value = selected;
+        paint(selected);
+      });
+    });
+
+    paint(0);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const review = document.getElementById("review").value;
+      const rating = Number(input.value);
+
+      const today = new Date().toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+
+      let starsMarkup = "";
+      for (let i = 1; i <= 5; i++) {
+        starsMarkup +=
+          i <= rating
+            ? `<i class="fa-solid fa-star text-orange-400 text-[12px]"></i>`
+            : `<i class="fa-solid fa-star text-transparent [-webkit-text-stroke:1px_orange] text-[12px]"></i>`;
+      }
+
+      const reviewHTML = `
+      <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
+        <div class="flex gap-3">
+          <img src="https://picsum.photos/200" alt="" class="w-[65px] h-[65px] rounded-full" />
+          <div class="flex flex-col">
+            <p class="text-[13px]">${name} <span class="text-gray">– ${today}</span></p>
+            <p class="text-[14px]">${review}</p>
+          </div>
+        </div>
+        <span class="flex">${starsMarkup}</span>
+      </div>
+    `;
+
+      document
+        .getElementById("reviews")
+        .insertAdjacentHTML("beforeend", reviewHTML);
+
+      form.reset();
+      selected = 0;
+      input.value = "";
+      paint(0);
+    });
+  }
+
+  initImageZoom();
+  initProductOptions();
+  initTabs();
+  initReviewForm();
+</script>

@@ -11,13 +11,19 @@ import Location from "../components/locator/location.astro";
 import SaleLoctaion from "../components/locator/saleLoctaion.astro";
 ---
 
-<Layout>
+<Layout name="Hongo - Store locator">
+   <!-- hero section -->
   <Hero
     title="Store locator"
     description="worldwide fashion store"
     image={WathcTitle.src}
   />
-  <section class="flex flex-col lg:flex-row w-full items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-white gap-8 lg:gap-0">
+
+
+
+
+  <!-- worlwide stores section -->
+  <section class="flex flex-col lg:flex-row w-full items-center py-12 px-6 sm:py-16 sm:px-10 lg:pb-30 lg:px-20 bg-white gap-8 lg:gap-0">
     <div class="flex-1 flex justify-center lg:justify-end pr-0 lg:pr-20">
       <div class="relative flex max-w-[320px] sm:max-w-[450px] lg:max-w-[550px] h-[70px] sm:h-[90px] lg:h-[110px] items-center">
         <p
@@ -32,7 +38,7 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
       </div>
     </div>
 
-    <div class="w-full h-px lg:w-px lg:h-[110px] bg-gray/20"></div>
+    <div class="w-full h-px lg:w-px lg:h-[120px] bg-gray/20"></div>
 
     <div class="flex-1 flex justify-center lg:justify-start pl-0 lg:pl-20 text-center lg:text-left">
       <p class="max-w-[320px] sm:max-w-[420px] text-[16px] sm:text-[18px] lg:text-[20px]">
@@ -41,6 +47,10 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
       </p>
     </div>
   </section>
+
+
+
+  <!--map section -->
   <section
     class="bg-[rgb(246,246,246)] min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] relative flex flex-col w-full justify-end items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-4"
   >
@@ -48,12 +58,16 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
     <p class="z-1 text-[16px] sm:text-[18px] lg:text-[20px] max-w-60 text-center">
       Worldwide all hongo fashion store locations
     </p>
-    <button
+    <button id="down-button"
       class="z-1 rounded-full bg-white w-[37px] h-[37px] animate-bounce hover:bg-gold hover:text-white cursor-pointer"
       >🡓</button
     >
   </section>
-  <section
+
+
+
+  <!--world stores section -->
+  <section id="locationsSection"
     class="flex w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-[rgb(246,246,246)]"
   >
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5">
@@ -91,6 +105,10 @@ Suite 21, Netherlands"
       />
     </div>
   </section>
+
+
+
+  <!--style life section -->
   <section
     class="bg-white relative flex flex-col lg:flex-row w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-6 lg:gap-8"
   >
@@ -111,6 +129,10 @@ Suite 21, Netherlands"
       text ever since the when an unknown.
     </p>
   </section>
+
+
+
+  <!-- images section -->
   <section class="flex flex-col lg:flex-row w-full">
     <div
       class="w-full lg:w-120 min-h-[220px] sm:min-h-[260px] lg:h-120 bg-gold py-10 sm:py-8 lg:py-[20px] px-6 sm:px-10 lg:px-[80px] flex flex-col justify-center gap-2 lg:gap-0"
@@ -166,6 +188,10 @@ Suite 21, Netherlands"
     >
     </div>
   </section>
+
+
+
+  <!-- list section -->
     <section
     class="flex w-full items-center justify-center h-auto py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20 gap-8 sm:gap-12 lg:gap-20 bg-white"
   >
@@ -207,11 +233,17 @@ Suite 21, Netherlands"
   </section>
 
 
-  <section class=" grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 bg-[rgb(246,246,246)] py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20">
+
+  <!-- saleLocation section -->
+  <section  class=" grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 bg-[rgb(246,246,246)] py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20">
     <SaleLoctaion />
     <SaleLoctaion />
     <SaleLoctaion />
   </section>
+
+
+
+  <!-- brands section -->
   <section class="flex flex-wrap bg-white py-12 px-6 sm:py-16 sm:px-16 lg:py-20 lg:px-50 gap-8 sm:gap-16 lg:gap-30 justify-center items-center">
     <img src="src\assets\images\locator\companies\brands-1-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
     <img src="src\assets\images\locator\companies\brands-2-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
@@ -220,3 +252,14 @@ Suite 21, Netherlands"
     <img src="src\assets\images\locator\companies\brands-5-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
   </section>
 </Layout>
+
+<script>
+  let downButton = document.getElementById("down-button");
+  let locationSection = document.getElementById("locationsSection")
+
+  function scrollDown() {
+     locationSection.scrollIntoView({ behavior: "smooth" });
+  }
+
+  downButton?.addEventListener("click", scrollDown)
+</script>

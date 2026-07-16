@@ -2,39 +2,87 @@
 import Layout from "../layouts/Layout.astro";
 import Watch from "../components/landing/watch.astro";
 import Blog from "../components/landing/blog.astro"
+import BestSeller from "../components/landing/bestSeller.astro"
 import HeroSlider from "../components/landing/heroSlider.astro"
+import data from "../data/products.json";
+
+
+const beigeWatches = data.filter((product) => product.background === "beige");
+
+
+const bestSellerVariants = [
+  "normal",
+  "normal",
+  "item4x4",
+  "item2x2",
+  "item4x4",
+  "normal",
+  "normal",
+  "item2x2",
+];
+
+
+const bestSellerProducts = bestSellerVariants
+  .map((variant, index) => ({ variant, product: beigeWatches[index] }))
+  .filter((entry) => entry.product)
+  .slice(0, 4);
 ---
 
-<Layout>
+<Layout name="Hongo">
+  <!-- slider -->
   <HeroSlider />
+
+
+
+
+  <!-- list section -->
   <section class="flex w-full items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9">
     <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full text-gray">
       <li class="flex gap-3 items-center">
-        <i>:D</i>
+        <i class="fa-solid fa-globe"></i>
         <p>WORLDWIDE SHIPPING</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i>:D</i>
+        <i class="fa-solid fa-book-bookmark"></i>
         <p>CERTIFICATED BY GURUS</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i>:D</i>
+        <i class="fa-solid fa-calendar"></i>
         <p>30 DAYS MONEY BACK</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i>:D</i>
+        <i class="fa-solid fa-face-grin-beam"></i>
         <p>99% POSITIVE FEEDBACKS</p>
       </li>
     </ul>
   </section>
 
+
+
+
+  <!-- images and video section -->
   <section class="flex flex-col lg:flex-row w-full">
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center"></div>
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center"></div>
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-full h-full" href=""></a> </div>
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center"></div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center pt-5 lg:pt-25 flex items-center flex-col"> <h4 class="text-[14px] uppercase text-white">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center">High quality and
+good design shape</p> </div>
+    <div class="relative w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center">
+  <button
+    id="watch-video-btn"
+    type="button"
+    aria-label="Reproducir video"
+    class="group absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center round"
+  >
+    <i class="fa-regular fa-circle-play  text-[100px] text-white hover:text-[150px] transition-all duration-300"></i>
+  </button>
+</div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-full h-full" href="/shop"></a> </div>
+    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center pt-5 lg:pt-25 flex items-center flex-col"><h4 class="text-[14px] uppercase text-gold">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center text-white">High quality and
+good design shape</p></div>
   </section>
 
+
+
+
+  <!-- feature products section -->
   <section
     class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
   >
@@ -43,19 +91,37 @@ import HeroSlider from "../components/landing/heroSlider.astro"
       <p class="text-[14px] text-gray">Elegance is an attitude longines</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-0">
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
-      <Watch />
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-0">
+      {
+        beigeWatches.map((product) => (
+          <Watch
+            name={product.name}
+            priceFrom={product.price.from}
+            priceTo={product.price.to}
+            id={product.id}
+            img={product.images.front}
+          />
+        ))
+      }
+      {
+        beigeWatches.map((product) => (
+          <Watch
+            name={product.name}
+            priceFrom={product.price.from}
+            priceTo={product.price.to}
+            id={product.id}
+            img={product.images.front}
+          />
+        ))
+      }
+      
     </div>
   </section>
+
+
+
+
+   <!-- about company section -->
   <section class="flex flex-col lg:flex-row w-full h-auto lg:h-105 overflow-hidden items-center">
     <img
       class="object-cover object-bottom w-full h-64 sm:h-80 lg:w-180 lg:h-full"
@@ -64,25 +130,59 @@ import HeroSlider from "../components/landing/heroSlider.astro"
     />
     <div class="relative w-full lg:w-auto">
       <img
-        class="object-cover w-full h-64 sm:h-80 lg:h-auto lg:w-auto"
+        class="object-cover w-full h-64 sm:h-80 lg:h-full lg:w-auto"
         src="/src/assets/images/graphic-banner-7.jpg"
         alt=""
       />
-      <h3 class="absolute text-gold top-8 sm:top-12 lg:top-50 left-6 sm:left-10 lg:left-20 text-[12px]">
+      <h3 class=" decor-line absolute text-gold top-8 sm:top-12 lg:top-40 left-6 sm:left-10 lg:left-20 text-[12px]">
         ABOUT COMPANY
       </h3>
-      <p class="absolute text-white top-14 sm:top-20 lg:top-55 left-6 sm:left-10 lg:left-20 text-[20px] sm:text-[24px] lg:text-[30px] max-w-[220px] sm:max-w-72">
+      <p class="absolute text-white top-14 sm:top-20 lg:top-45 left-6 sm:left-10 lg:left-20 text-[20px] sm:text-[24px] lg:text-[30px] max-w-[220px] sm:max-w-72">
         Just now learn about our brand, quality and latest design watches.
       </p>
     </div>
   </section>
 
+
+
+
+  <!-- best seller section -->
+  <section
+    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-60 space-y-9"
+  >
+    <div class="flex flex-col items-center">
+      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Best seller Products</h3>
+      <p class="text-[14px] text-gray">You're not quite sure of your position</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-100 pb-120 lg:pb-0 sm:gap-4 lg:gap-8 auto-rows-[260px] sm:auto-rows-[300px] lg:auto-rows-[350px] w-full">
+  {
+    bestSellerProducts.map(({ variant, product }) =>
+      product && (
+        <BestSeller
+          key={product.id}
+          variant={variant}
+          title={product.name}
+          price={`£${product.price.from} - £${product.price.to}`}
+          image={product.images.front}
+          id={product.id}
+        />
+      )
+    )
+  }
+</div>
+  </section>
+
+
+
+
+   <!-- discount section -->
   <section class="flex flex-col w-full">
     <div class="relative">
       <img
         src="/src/assets/images/graphic-banner-8.jpg"
         alt=""
-        class="w-full h-auto object-cover"
+        class="w-full h-50 object-cover lg:h-auto"
       />
       <div
         class="absolute top-1/4 left-2/6 flex max-w-70 -translate-x-1/2 flex-col items-center gap-2 sm:gap-3 lg:gap-4 text-center"
@@ -103,29 +203,35 @@ import HeroSlider from "../components/landing/heroSlider.astro"
       class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full items-center py-6 px-6 sm:py-8 sm:px-10 lg:py-10 lg:px-20 bg-dark"
     >
       <li class="flex gap-3 items-center">
-        <i class="text-gold">:D</i>
+        <i class="text-gold fa-solid fa-globe"></i>
         <p class="text-white">WORLDWIDE SHIPPING</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i class="text-gold">:D</i>
+        <i class="text-gold fa-solid fa-book-bookmark"></i>
         <p class="text-white">CERTIFICATED BY GURUS</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i class="text-gold">:D</i>
+        <i class="text-gold fa-solid fa-calendar"></i>
         <p class="text-white">30 DAYS MONEY BACK</p>
       </li>
       <li class="flex gap-3 items-center">
-        <i class="text-gold">:D</i>
+        <i class="text-gold fa-solid fa-face-grin-beam"></i>
         <p class="text-white">99% POSITIVE FEEDBACKS</p>
       </li>
     </ul>
   </section>
+
+
+
+
+  
+   <!-- last blogs section -->
   <section
     class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
   >
     <div class="flex flex-col items-center">
       <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Latest Blogs</h3>
-      <p class="text-[14px] text-gray">You’re not quite sure of your position</p>
+      <p class="text-[14px] text-gray">You're not quite sure of your position</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <Blog />
@@ -134,4 +240,68 @@ import HeroSlider from "../components/landing/heroSlider.astro"
         <Blog />
       </div>
   </section>
+
+  <div
+    id="video-modal"
+    class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/80 px-4"
+  >
+    <div class="relative w-full max-w-3xl">
+      <button
+        id="video-modal-close"
+        type="button"
+        aria-label="Cerrar video"
+        class="fixed -top-0 right-0 flex h-9 w-9 items-center justify-center  bg-white/10 text-white  sm:h-10 sm:w-10 cursor-pointer"
+      >
+        <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
+      </button>
+      <div class="relative w-full pt-[56.25%]">
+        <iframe
+          id="video-modal-iframe"
+          class="absolute inset-0 h-full w-full rounded"
+          src=""
+          title="watch example"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+
+<script>
+  const YOUTUBE_ID = "YGQBm9Mnad8";
+  const modal = document.getElementById("video-modal");
+  const iframe = document.getElementById("video-modal-iframe");
+  const openBtn = document.getElementById("watch-video-btn");
+  const closeBtn = document.getElementById("video-modal-close");
+
+  function openModal() {
+    iframe.src = "https://www.youtube.com/embed/" + YOUTUBE_ID + "?autoplay=1&rel=0";
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    iframe.src = ""; // corta la reproducción al cerrar
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+</script>
