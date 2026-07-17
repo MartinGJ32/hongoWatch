@@ -1,12 +1,12 @@
-  <div class="relative h-6">
+<div class="relative h-6">
     <div
-      class="absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-gray-300 rounded-full"
+      class="absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-gray-300 dark:bg-dark-border rounded-full"
     >
     </div>
 
     <div
       id="range"
-      class="absolute top-1/2 h-[2px] -translate-y-1/2 bg-gold rounded-full"
+      class="absolute top-1/2 h-[2px] -translate-y-1/2 bg-gold dark:bg-dark-gold rounded-full"
     >
     </div>
 
@@ -27,6 +27,8 @@
       [&::-webkit-slider-thumb]:bg-white
       [&::-webkit-slider-thumb]:border-2
       [&::-webkit-slider-thumb]:border-gold
+      dark:[&::-webkit-slider-thumb]:bg-dark-surface
+      dark:[&::-webkit-slider-thumb]:border-dark-gold
       "
     />
 
@@ -47,11 +49,13 @@
       [&::-webkit-slider-thumb]:bg-white
       [&::-webkit-slider-thumb]:border-2
       [&::-webkit-slider-thumb]:border-gold
+      dark:[&::-webkit-slider-thumb]:bg-dark-surface
+      dark:[&::-webkit-slider-thumb]:border-dark-gold
       "
     />
   </div>
 
-  <div class="flex justify-between text-[14px]">
+  <div class="flex justify-between text-[14px] dark:text-dark-text">
     <span>$<span id="minValue">10</span></span>
     <span>$<span id="maxValue">4000</span></span>
   </div>

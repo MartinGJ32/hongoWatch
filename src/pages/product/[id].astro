@@ -41,13 +41,11 @@ const { from: priceFrom, to: priceTo } = price;
 const category = categories.join(", ");
 const reviews = review?.enabled ? [review] : [];
 
-
 const colorSwatchClasses = {
   Black:
     "block w-[31px] h-[20px] bg-[#4F5968] border border-[#434B58] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#4F5968]/60",
 
-  Blue:
-    "block w-[31px] h-[20px] bg-[#5E779E] border border-[#526987] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#5E779E]/60",
+  Blue: "block w-[31px] h-[20px] bg-[#5E779E] border border-[#526987] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#5E779E]/60",
 
   Brown:
     "block w-[31px] h-[20px] bg-[#8C7563] border border-[#796454] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#8C7563]/60",
@@ -55,8 +53,7 @@ const colorSwatchClasses = {
   Green:
     "block w-[31px] h-[20px] bg-[#718A79] border border-[#627767] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#718A79]/60",
 
-  Red:
-    "block w-[31px] h-[20px] bg-[#B95B5B] border border-[#A34E4E] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B95B5B]/60",
+  Red: "block w-[31px] h-[20px] bg-[#B95B5B] border border-[#A34E4E] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B95B5B]/60",
 
   Silver:
     "block w-[31px] h-[20px] bg-[#B8BEC7] border border-[#A5ACB7] cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-[#B8BEC7]/60",
@@ -68,16 +65,11 @@ const defaultSwatchClass =
   "block w-[31px] h-[20px] bg-gray-200 border border-gray-300 cursor-pointer has-[:checked]:ring-2 has-[:checked]:ring-offset-2 has-[:checked]:ring-gray-300/60";
 ---
 
-<Layout name={ `Hongo - ${renderWatch.name}`}>
+<Layout name={`Hongo - ${renderWatch.name}`}>
   <section
-  
-    class="bg-white flex flex-col lg:flex-row w-full justify-center h-auto py-25 px-4 gap-8 sm:px-6 sm:py-10 md:px-10 md:py-24 md:gap-10 lg:items-start lg:py-25 lg:px-70 lg:gap-17"
+    class="bg-white dark:bg-dark-bg flex flex-col lg:flex-row w-full justify-center h-auto py-25 px-4 gap-8 sm:px-6 sm:py-10 md:px-10 md:py-24 md:gap-10 lg:items-start lg:py-25 lg:px-70 lg:gap-17"
   >
-
-
-
-
-  <!-- Product images and form -->
+    <!-- Product images and form -->
     <div
       class="flex flex-col-reverse items-center gap-4 w-full lg:flex-row lg:items-start lg:gap-5 lg:w-auto"
       id="imgsWatchCointainer"
@@ -87,27 +79,38 @@ const defaultSwatchClass =
       >
         <img
           src={renderWatch.images.front}
-          alt="Image front"
+          data-light={renderWatch.images.front}
+          data-dark={renderWatch.imagesDark.front}
+          alt=`front photo of ${name}`
           class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
         />
+
         <img
           src={renderWatch.images.back}
-          alt="Image back"
+          data-light={renderWatch.images.back}
+          data-dark={renderWatch.imagesDark.back}
+          alt=`back photo of ${name}`
           class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
         />
+
         <img
           src={renderWatch.images.big}
-          alt="Image big"
+          data-light={renderWatch.images.big}
+          data-dark={renderWatch.imagesDark.big}
+          alt=`close-up photo of ${name}`
           class="thumbnail w-[70px] h-[90px] shrink-0 object-cover hover:opacity-70 cursor-pointer sm:w-[85px] sm:h-[105px] lg:max-w-[115px] lg:max-h-[145px] lg:w-auto lg:h-auto"
         />
       </div>
+
       <div
         class="flex overflow-hidden w-full max-w-[320px] max-h-[400px] mx-auto sm:max-w-[420px] sm:max-h-[520px] md:max-w-[480px] md:max-h-[600px] lg:max-w-[539px] lg:max-h-[498px] lg:mx-0"
       >
         <img
           src={renderWatch.images.front}
+          data-light={renderWatch.images.front}
+          data-dark={renderWatch.imagesDark.front}
           id="zoomContainer"
-          alt="Image 1"
+          alt=`zoom photo of ${name}`
           class="w-full h-[498px] object-cover cursor-crosshair"
         />
       </div>
@@ -115,79 +118,109 @@ const defaultSwatchClass =
 
     <div class="flex flex-col gap-5 w-full lg:flex-1">
       <div class="flex gap-2 flex-wrap">
-        <a href="" class="text-[10px] text-gray uppercase">home</a>
-        <span class="text-[10px] text-gray"> > </span>
-        <a href="" class="text-[10px] text-gray uppercase">product</a><span
-          class="text-[10px] text-gray"
+        <a
+          href="/"
+          class="text-[10px] text-gray dark:text-dark-text-muted uppercase"
+          >home</a
         >
+        <span class="text-[10px] text-gray dark:text-dark-text-muted"> > </span>
+        <a
+          href="/shop"
+          class="text-[10px] text-gray dark:text-dark-text-muted uppercase"
+          >product</a
+        ><span class="text-[10px] text-gray dark:text-dark-text-muted">
           >
         </span>
-        <a href="" class="text-[10px] text-gray uppercase">{category}</a>
+        <a
+          href="#"
+          class="text-[10px] text-gray dark:text-dark-text-muted uppercase"
+          >{category}</a
+        >
       </div>
 
       <div
-        class="flex flex-wrap justify-between items-start w-full gap-3 border-b pb-5 border-gray/20"
+        class="flex flex-wrap justify-between items-start w-full gap-3 border-b pb-5 border-gray/20 dark:border-dark-border"
       >
         <div class="flex gap-3">
           <div class="flex flex-col items-start">
-            <p class="text-[20px]">{name}</p>
-            <p class="text-[14px]">€{priceFrom} – €{priceTo}</p>
+            <p class="text-[20px] dark:text-dark-text">{name}</p>
+            <p class="text-[14px] dark:text-dark-text">
+              €{priceFrom} – €{priceTo}
+            </p>
           </div>
         </div>
         <div class="flex flex-col gap-2">
           <span class="flex pt-2">
-            {Array.from({ length: 5 }).map((_, index) => (
-              index < rating ? (
-                <i class="fa-solid fa-star text-orange-400 text-[11px]"></i>
-              ) : (
-                <i class="fa-regular fa-star text-orange-400 text-[11px]"></i>
+            {
+              Array.from({ length: 5 }).map((_, index) =>
+                index < rating ? (
+                  <i class="fa-solid fa-star text-orange-400 text-[11px]" />
+                ) : (
+                  <i class="fa-regular fa-star text-orange-400 text-[11px]" />
+                ),
               )
-            ))}</span
+            }</span
           >
-          <p class="text-[11px]">
-            SKU: <span class="text-gray">{id}</span>
+          <p class="text-[11px] dark:text-dark-text">
+            SKU: <span class="text-gray dark:text-dark-text-muted">{id}</span>
           </p>
         </div>
       </div>
-      <div class="flex border-b pb-5 border-gray/20">
-        <p class="text-[14px] text-gray">
+      <div class="flex border-b pb-5 border-gray/20 dark:border-dark-border">
+        <p class="section-subtitle dark:text-dark-text-muted">
           {shortDescp}
         </p>
       </div>
 
-      <form id="productOptionsForm" class="flex flex-col gap-5 border-b pb-5 border-gray/20">
+      <form
+        id="productOptionsForm"
+        class="flex flex-col gap-5 border-b pb-5 border-gray/20 dark:border-dark-border"
+      >
         <div>
           <div class="flex gap-2 items-center flex-wrap">
-            <h4 class="uppercase text-[11px]">Color</h4>
+            <h4 class="uppercase text-[11px] dark:text-dark-text">Color</h4>
             <div class="flex gap-2" role="radiogroup" aria-label="Color">
-              {availableColors.map((color, index) => (
-                <label class={colorSwatchClasses[color] ?? defaultSwatchClass}>
-                  <input
-                    type="radio"
-                    name="color"
-                    value={color.toLowerCase()}
-                    class="sr-only"
-                    checked={index === 0}
-                  />
-                </label>
-              ))}
+              {
+                availableColors.map((color, index) => (
+                  <label
+                    class={colorSwatchClasses[color] ?? defaultSwatchClass}
+                  >
+                    <input
+                      type="radio"
+                      name="color"
+                      value={color.toLowerCase()}
+                      class="sr-only"
+                      checked={index === 0}
+                    />
+                  </label>
+                ))
+              }
             </div>
           </div>
         </div>
 
         <div class="flex gap-2 items-center flex-wrap gap-y-2">
-          <h4 class="uppercase text-[11px]">Size</h4>
+          <h4 class="uppercase text-[11px] dark:text-dark-text">Size</h4>
           <div class="flex gap-2" role="radiogroup" aria-label="Size">
-            {availableSizes.map((size, index) => (
-              <label
-                class="flex items-center justify-center px-5 border border-gray/50 cursor-pointer uppercase text-[11px] text-gray has-[:checked]:border-black has-[:checked]:text-black"
-              >
-                <input type="radio" name="size" value={size} class="sr-only" checked={index === 0} />{size}
-              </label>
-            ))}
+            {
+              availableSizes.map((size, index) => (
+                <label class="flex items-center justify-center px-5 border border-gray/50 dark:border-dark-border cursor-pointer uppercase text-[11px] text-gray dark:text-dark-text-muted has-[:checked]:border-black has-[:checked]:text-black dark:has-[:checked]:border-dark-text dark:has-[:checked]:text-dark-text">
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    class="sr-only"
+                    checked={index === 0}
+                  />
+                  {size}
+                </label>
+              ))
+            }
           </div>
 
-          <a href="" class="uppercase text-[11px] underline">size guide</a>
+          <a href="/size" class="uppercase text-[11px] underline dark:text-dark-text"
+            >size guide</a
+          >
         </div>
 
         <div class="flex gap-4 flex-wrap gap-y-3">
@@ -199,109 +232,158 @@ const defaultSwatchClass =
               type="number"
               min="1"
               value="1"
-              class="w-[39px] h-[39px] border border-gray/50 flex justify-center items-center text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              class="w-[39px] h-[39px] border border-gray/50 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text flex justify-center items-center text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
             <div class="flex flex-col">
               <button
                 type="button"
                 id="qtyIncrease"
-                class="w-[20px] h-[20px] border border-gray/50 flex justify-center items-center"
+                class="w-[20px] h-[20px] border border-gray/50 dark:border-dark-border dark:text-dark-text flex justify-center items-center"
                 >+</button
               >
               <button
                 type="button"
                 id="qtyDecrease"
-                class="w-[20px] h-[20px] border border-gray/50 flex justify-center items-center"
+                class="w-[20px] h-[20px] border border-gray/50 dark:border-dark-border dark:text-dark-text flex justify-center items-center"
                 >-</button
               >
             </div>
           </div>
           <button
             type="submit"
-            class="flex items-center justify-center px-[25px] py-[8px] uppercase text-[14px] text-white bg-black border-2 border-transparent hover:text-black hover:bg-transparent hover:border-black"
+            class="flex items-center justify-center px-[25px] py-[8px] uppercase text-[14px] text-white bg-black border-2 border-transparent hover:text-black hover:bg-transparent hover:border-black dark:bg-dark-gold dark:text-dark-bg dark:hover:bg-transparent dark:hover:text-dark-gold dark:hover:border-dark-gold"
             >add to cart</button
           >
         </div>
         <div class="flex items-center">
-          <i class="fa-regular fa-heart text-[10px] text-gray"></i>
-          <button type="button" class="text-[10px] text-gray uppercase">Add to Wishlist</button>
+          <i
+            class="fa-regular fa-heart text-[10px] text-gray dark:text-dark-text-muted"
+          ></i>
+          <button
+            type="button"
+            class="text-[10px] text-gray dark:text-dark-text-muted uppercase"
+            >Add to Wishlist</button
+          >
         </div>
       </form>
 
-      <div class="flex flex-col gap-4 items-start w-full sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <div
+        class="flex flex-col gap-4 items-start w-full sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+      >
         <div class="felx flex-col space-y-2">
-          <p class="text-[11px] uppercase">
-            Category: <a href="" class="text-gray hover:text-gold"
+          <p class="text-[11px] uppercase dark:text-dark-text">
+            Category: <a
+              href="/shop"
+              class="text-gray dark:text-dark-text-muted hover:text-gold dark:hover:text-dark-gold"
               >{category}</a
             >
           </p>
-          <p class="text-[11px] uppercase">
-            tag: {tags && tags.map((tag, index) => (
-              <>
-                <a href="" class="text-gray hover:text-gold">{tag}</a>{index < tags.length - 1 && ", "}
-              </>
-            ))}
+          <p class="text-[11px] uppercase dark:text-dark-text">
+            tag: {
+              tags &&
+                tags.map((tag, index) => (
+                  <>
+                    <a
+                      href="/shop"
+                      class="text-gray dark:text-dark-text-muted hover:text-gold dark:hover:text-dark-gold"
+                    >
+                      {tag}
+                    </a>
+                    {index < tags.length - 1 && ", "}
+                  </>
+                ))
+            }
           </p>
-          <p class="text-[11px] uppercase">
-            brand: <a href="" class="text-gray hover:text-gold">{brand}</a>
+          <p class="text-[11px] uppercase dark:text-dark-text">
+            brand: <a
+              href="/shop"
+              class="text-gray dark:text-dark-text-muted hover:text-gold dark:hover:text-dark-gold"
+              >{brand}</a
+            >
           </p>
         </div><div class="flex gap-2">
-          <a href="#"><i class="fa-brands fa-facebook-f text-[11px]"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter text-[11px]"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in text-[11px]"></i></a>
-          <a href="#"><i class="fa-brands fa-pinterest-p text-[11px]"></i></a>
+          <a href="#"
+            ><i class="fa-brands fa-facebook-f text-[11px] dark:text-dark-text"
+            ></i></a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-x-twitter text-[11px] dark:text-dark-text"
+            ></i></a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-linkedin-in text-[11px] dark:text-dark-text"
+            ></i></a
+          >
+          <a href="#"
+            ><i class="fa-brands fa-pinterest-p text-[11px] dark:text-dark-text"
+            ></i></a
+          >
         </div>
       </div>
     </div>
   </section>
 
-
-
-
-  
   <!-- Product info -->
   <section
-    class="bg-white flex flex-col w-full justify-center items-center h-auto py-10 px-4 gap-8 sm:px-6 sm:py-14 md:px-10 md:py-16 md:gap-10 lg:py-20 lg:px-45 lg:gap-15"
+    class="bg-white dark:bg-dark-bg flex flex-col w-full justify-center items-center h-auto py-10 px-4 gap-8 sm:px-6 sm:py-14 md:px-10 md:py-16 md:gap-10 lg:py-20 lg:px-45 lg:gap-15"
   >
-    <div class="flex gap-4 overflow-x-auto whitespace-nowrap w-full justify-start pb-1 sm:justify-center sm:gap-6 sm:overflow-visible md:gap-8 lg:gap-10">
-      <button id="descriptionBtn" data-target="descriptionContent" class="text-[13px] uppercase border-b"
-        >description</button
-      ><button id="additionalInfoBtn" data-target="additionalInfoContent" class="text-[13px] uppercase text-gray"
-        >Additional information</button
-      ><button id="reviewsBtn" data-target="reviewsContent" class="text-[13px] uppercase text-gray"
+    <div
+      class="flex gap-4 overflow-x-auto whitespace-nowrap w-full justify-start pb-1 sm:justify-center sm:gap-6 sm:overflow-visible md:gap-8 lg:gap-10 dark:text-dark-gold"
+    >
+      <button
+        id="descriptionBtn"
+        data-target="descriptionContent"
+        class="text-[13px] uppercase border-b">description</button
+      ><button
+        id="additionalInfoBtn"
+        data-target="additionalInfoContent"
+        class="text-[13px] uppercase text-gray dark:text-dark-gold/50">Additional information</button
+      ><button
+        id="reviewsBtn"
+        data-target="reviewsContent"
+        class="text-[13px] uppercase text-gray dark:text-dark-gold/50"
         >Reviews ({reviews.length})</button
       >
     </div>
 
     <div
       id="infoContainer"
-      class="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 border-b border-gray/20 pb-10 sm:pb-14 md:pb-20 lg:pb-25 w-full"
+      class="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 border-b border-gray/20 dark:border-dark-border pb-10 sm:pb-14 md:pb-20 lg:pb-25 w-full"
     >
       <!-- DESCRIPTION TAB -->
-      <div id="descriptionContent" class="tab-content flex flex-col lg:flex-row items-start gap-6 sm:gap-8 w-full">
+      <div
+        id="descriptionContent"
+        class="tab-content flex flex-col lg:flex-row items-start gap-6 sm:gap-8 w-full"
+      >
         <div class="flex flex-col flex-1 min-w-0 gap-10">
-          <p class="text-gray text-[14px]">
+          <p class="section-subtitle dark:text-dark-text-muted">
             {description}
           </p>
           <div>
-            <h4 class="text-[14px]">01. Matte gunmetal stainless steel link</h4>
-            <p class="text-gray text-[14px]">
+            <h4 class="text-[14px] dark:text-dark-text">
+              01. Matte gunmetal stainless steel link
+            </h4>
+            <p class="section-subtitle dark:text-dark-text-muted">
               Any agreement with should have strong verification and enforcement
               safeguards to prevent future cheating.lorem Ipsum is simply dummy
               text of industry
             </p>
           </div>
           <div>
-            <h4 class="text-[14px]">02. Brushed taupe stainless steel</h4>
-            <p class="text-gray text-[14px]">
+            <h4 class="text-[14px] dark:text-dark-text">
+              02. Brushed taupe stainless steel
+            </h4>
+            <p class="section-subtitle dark:text-dark-text-muted">
               Any agreement with should have strong verification and enforcement
               safeguards to prevent future cheating.lorem Ipsum is simply dummy
               text of industry
             </p>
           </div>
           <div>
-            <h4 class="text-[14px]">03. Gunmetal hands and black markers</h4>
-            <p class="text-gray text-[14px]">
+            <h4 class="text-[14px] dark:text-dark-text">
+              03. Gunmetal hands and black markers
+            </h4>
+            <p class="section-subtitle dark:text-dark-text-muted">
               Any agreement with should have strong verification and enforcement
               safeguards to prevent future cheating.lorem Ipsum is simply dummy
               text of industry
@@ -310,98 +392,195 @@ const defaultSwatchClass =
         </div>
         <img
           src={imgBig}
-          alt=""
+          alt=`close-up photo of ${name}`
           class="w-full flex-1 min-w-0 max-h-[280px] object-cover sm:max-h-[360px] md:max-h-[420px] lg:max-h-[520px] lg:max-w-[550px]"
         />
       </div>
 
       <!-- ADDITIONAL INFO TAB -->
       <div id="additionalInfoContent" class="tab-content hidden flex-1 w-full">
-        <table class="w-full table-fixed text-[12px] sm:text-[13px] md:text-[14px]">
+        <table
+          class="w-full table-fixed text-[12px] sm:text-[13px] md:text-[14px]"
+        >
           <tbody>
-            <tr class="border-b border-gray-200">
-              <th class="w-2/5 py-4 pl-2 text-left font-semibold align-top sm:w-1/3">Color</th>
-              <td class="py-4 text-gray"><p>{availableColors.join(", ")}</p></td>
+            <tr class="border-b border-gray-200 dark:border-dark-border">
+              <th
+                class="w-2/5 py-4 pl-2 text-left font-semibold align-top sm:w-1/3 dark:text-dark-text"
+                >Color</th
+              >
+              <td class="py-4 text-gray dark:text-dark-text-muted"
+                ><p>{availableColors.join(", ")}</p></td
+              >
             </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <th class="py-4 text-left font-semibold align-top pl-2">Size</th>
-              <td class="py-4 text-gray"><p>{availableSizes.join(", ")}</p></td>
+            <tr
+              class="border-b border-gray-200 dark:border-dark-border bg-gray-50 dark:bg-dark-surface-2"
+            >
+              <th
+                class="py-4 text-left font-semibold align-top pl-2 dark:text-dark-text"
+                >Size</th
+              >
+              <td class="py-4 text-gray dark:text-dark-text-muted"
+                ><p>{availableSizes.join(", ")}</p></td
+              >
             </tr>
-            <tr class="border-b border-gray-200">
-              <th class="py-4 text-left font-semibold align-top pl-2">Style/Type</th>
-              <td class="py-4 text-gray"><p>{style}</p></td>
+            <tr class="border-b border-gray-200 dark:border-dark-border">
+              <th
+                class="py-4 text-left font-semibold align-top pl-2 dark:text-dark-text"
+                >Style/Type</th
+              >
+              <td class="py-4 text-gray dark:text-dark-text-muted"
+                ><p>{style}</p></td
+              >
             </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <th class="py-4 text-left font-semibold align-top pl-2">Movement</th>
-              <td class="py-4 text-gray"><p>{movement}</p></td>
+            <tr
+              class="border-b border-gray-200 dark:border-dark-border bg-gray-50 dark:bg-dark-surface-2"
+            >
+              <th
+                class="py-4 text-left font-semibold align-top pl-2 dark:text-dark-text"
+                >Movement</th
+              >
+              <td class="py-4 text-gray dark:text-dark-text-muted"
+                ><p>{movement}</p></td
+              >
             </tr>
             <tr>
-              <th class="py-4 text-left font-semibold align-top pl-2">Case</th>
-              <td class="py-4 text-gray"><p>{caseW}</p></td>
+              <th
+                class="py-4 text-left font-semibold align-top pl-2 dark:text-dark-text"
+                >Case</th
+              >
+              <td class="py-4 text-gray dark:text-dark-text-muted"
+                ><p>{caseW}</p></td
+              >
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- REVIEWS TAB -->
-      <div id="reviewsContent" class="tab-content hidden flex flex-col gap-5 w-full">
+      <div
+        id="reviewsContent"
+        class="tab-content hidden flex flex-col gap-5 w-full"
+      >
         <div id="reviews" class="flex flex-col space-y-6">
-          {reviews && reviews.map((review) => (
-            <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
-              <div class="flex gap-3">
-                <img src="https://picsum.photos/200" alt="" class="w-[65px] h-[65px] rounded-full" />
-                <div class="flex flex-col">
-                  <p class="text-[13px]">{review.author} <span class="text-gray">– {review.date}</span></p>
-                  <p class="text-[14px]">{review.text}</p>
+          {
+            reviews &&
+              reviews.map((review) => (
+                <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 dark:border-dark-border pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
+                  <div class="flex gap-3">
+                    <img
+                      src="https://picsum.photos/200"
+                      alt="profile picture"
+                      class="w-[65px] h-[65px] rounded-full"
+                    />
+                    <div class="flex flex-col">
+                      <p class="text-[13px] dark:text-dark-text">
+                        {review.author}{" "}
+                        <span class="text-gray dark:text-dark-text-muted">
+                          – {review.date}
+                        </span>
+                      </p>
+                      <p class="text-[14px] dark:text-dark-text">
+                        {review.text}
+                      </p>
+                    </div>
+                  </div>
+                  <span class="flex">
+                    {Array.from({ length: 5 }).map((_, index) =>
+                      index < review.stars ? (
+                        <i class="fa-solid fa-star text-orange-400 text-[12px]" />
+                      ) : (
+                        <i class="fa-regular fa-star text-orange-400 text-[12px]" />
+                      ),
+                    )}
+                  </span>
                 </div>
-              </div>
-              <span class="flex">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  index < review.stars ? (
-                    <i class="fa-solid fa-star text-orange-400 text-[12px]"></i>
-                  ) : (
-                    <i class="fa-regular fa-star text-orange-400 text-[12px]"></i>
-                  )
-                ))}
-              </span>
-            </div>
-          ))}
+              ))
+          }
         </div>
 
         <div class="flex flex-col gap-1">
-          <h4 class="text-[14px] uppercase">Add a review</h4>
-          <p class="text-[12px] text-gray">Your email address will not be published. Required fields are marked *</p>
-          <form id="formulario" action="" class="flex flex-col gap-4 mt-6 w-full sm:gap-6">
+          <h4 class="text-[14px] uppercase dark:text-dark-text">
+            Add a review
+          </h4>
+          <p class="text-[12px] text-gray dark:text-dark-text-muted">
+            Your email address will not be published. Required fields are marked
+            *
+          </p>
+          <form
+            id="formulario"
+            action=""
+            class="flex flex-col gap-4 mt-6 w-full sm:gap-6"
+          >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div class="flex flex-col gap-2">
-                <label for="name" class="text-[12px] font-medium">Name*</label>
-                <input id="name" name="name" type="text" required
-                  class="border border-gray/30 px-4 py-3 outline-none focus:border-black w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]" />
+                <label
+                  for="name"
+                  class="text-[12px] font-medium dark:text-dark-text"
+                  >Name*</label
+                >
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="border border-gray/30 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text px-4 py-3 outline-none focus:border-black dark:focus:border-dark-gold w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]"
+                />
               </div>
               <div class="flex flex-col gap-2">
-                <label for="email" class="text-[12px] font-medium">Email*</label>
-                <input id="email" name="email" type="email" required
-                  class="border border-gray/30 px-4 py-3 outline-none focus:border-black w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]" />
+                <label
+                  for="email"
+                  class="text-[12px] font-medium dark:text-dark-text"
+                  >Email*</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="border border-gray/30 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text px-4 py-3 outline-none focus:border-black dark:focus:border-dark-gold w-full max-w-[530px] max-h-[42px] px-[15px] py-[10px]"
+                />
               </div>
             </div>
 
             <div class="flex flex-col gap-3">
-              <label class="text-[12px] font-medium">Your rating</label>
+              <label class="text-[12px] font-medium dark:text-dark-text"
+                >Your rating</label
+              >
               <div class="flex flex-col gap-3">
                 <div id="rating" class="flex gap-1">
-                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="1">
+                  <button
+                    type="button"
+                    class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]"
+                    data-value="1"
+                  >
                     <i class="fa-solid fa-star"></i>
                   </button>
-                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="2">
+                  <button
+                    type="button"
+                    class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]"
+                    data-value="2"
+                  >
                     <i class="fa-solid fa-star"></i>
                   </button>
-                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="3">
+                  <button
+                    type="button"
+                    class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]"
+                    data-value="3"
+                  >
                     <i class="fa-solid fa-star"></i>
                   </button>
-                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="4">
+                  <button
+                    type="button"
+                    class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]"
+                    data-value="4"
+                  >
                     <i class="fa-solid fa-star"></i>
                   </button>
-                  <button type="button" class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]" data-value="5">
+                  <button
+                    type="button"
+                    class="rating-star text-transparent [-webkit-text-stroke:1px_orange] text-xl transition-colors text-[14px]"
+                    data-value="5"
+                  >
                     <i class="fa-solid fa-star"></i>
                   </button>
                 </div>
@@ -410,13 +589,24 @@ const defaultSwatchClass =
             </div>
 
             <div class="flex flex-col gap-2">
-              <label for="review" class="text-[12px] font-medium">Your review*</label>
-              <textarea id="review" name="review" rows="6" required
-                class="border border-gray/30 px-4 py-3 resize-none outline-none focus:border-black w-full max-w-[1140px] max-h-[105px] px-[15px] py-[9px]"></textarea>
+              <label
+                for="review"
+                class="text-[12px] font-medium dark:text-dark-text"
+                >Your review*</label
+              >
+              <textarea
+                id="review"
+                name="review"
+                rows="6"
+                required
+                class="border border-gray/30 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text px-4 py-3 resize-none outline-none focus:border-black dark:focus:border-dark-gold w-full max-w-[1140px] max-h-[105px] px-[15px] py-[9px]"
+              ></textarea>
             </div>
 
-            <button type="submit"
-              class="self-start w-full bg-black text-white uppercase text-[13px] px-[20px] py-[3px] border border-transparent hover:bg-transparent hover:text-black hover:border-black transition-all ease-out duration-300 sm:w-auto">
+            <button
+              type="submit"
+              class="self-start w-full bg-black text-white uppercase text-[13px] px-[20px] py-[3px] border border-transparent hover:bg-transparent hover:text-black hover:border-black transition-all ease-out duration-300 sm:w-auto dark:bg-dark-gold dark:text-dark-bg dark:hover:bg-transparent dark:hover:text-dark-gold dark:hover:border-dark-gold"
+            >
               Submit
             </button>
           </form>
@@ -427,10 +617,31 @@ const defaultSwatchClass =
 </Layout>
 
 <script>
-  
   function initImageZoom() {
     const zoomContainer = document.getElementById("zoomContainer");
     const thumbnails = document.querySelectorAll(".thumbnail");
+
+    if (!zoomContainer) return;
+
+    function updateThemeImages() {
+      const dark = document.documentElement.classList.contains("dark");
+
+      document.querySelectorAll("[data-light][data-dark]").forEach((img) => {
+        img.src = dark
+          ? img.dataset.dark
+          : img.dataset.light;
+      });
+    }
+
+    updateThemeImages();
+
+    const observer = new MutationObserver(updateThemeImages);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
 
     zoomContainer.addEventListener("mousemove", (e) => {
       const rect = zoomContainer.getBoundingClientRect();
@@ -442,23 +653,31 @@ const defaultSwatchClass =
       zoomContainer.style.transform = "scale(2)";
     });
 
+
     zoomContainer.addEventListener("mouseleave", () => {
       zoomContainer.style.transform = "scale(1)";
       zoomContainer.style.transformOrigin = "center";
     });
 
+
     thumbnails.forEach((img) => {
       img.addEventListener("click", () => {
-        zoomContainer.src = img.src;
+        const dark = document.documentElement.classList.contains("dark");
+
+        zoomContainer.src = dark
+          ? img.dataset.dark
+          : img.dataset.light;
       });
     });
   }
 
-  
+
   function initProductOptions() {
     const quantityInput = document.getElementById("quantity");
     const qtyIncrease = document.getElementById("qtyIncrease");
     const qtyDecrease = document.getElementById("qtyDecrease");
+
+    if (!quantityInput || !qtyIncrease || !qtyDecrease) return;
 
     qtyIncrease.addEventListener("click", () => {
       quantityInput.value = Number(quantityInput.value) + 1;
@@ -466,47 +685,81 @@ const defaultSwatchClass =
 
     qtyDecrease.addEventListener("click", () => {
       const current = Number(quantityInput.value);
-      if (current > 1) quantityInput.value = current - 1;
+
+      if (current > 1) {
+        quantityInput.value = current - 1;
+      }
     });
 
     const productOptionsForm = document.getElementById("productOptionsForm");
+
+    if (!productOptionsForm) return;
+
     productOptionsForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       const formData = new FormData(productOptionsForm);
-      console.log("Agregado al carrito:", Object.fromEntries(formData));
+
+      console.log(
+        "Agregado al carrito:",
+        Object.fromEntries(formData)
+      );
     });
   }
+
 
   function initTabs() {
     const descriptionBtn = document.getElementById("descriptionBtn");
     const additionalInfoBtn = document.getElementById("additionalInfoBtn");
     const reviewsBtn = document.getElementById("reviewsBtn");
-    const tabButtons = [descriptionBtn, additionalInfoBtn, reviewsBtn];
+
+    const tabButtons = [
+      descriptionBtn,
+      additionalInfoBtn,
+      reviewsBtn
+    ];
+
     const tabContents = document.querySelectorAll(".tab-content");
+
+    if (!descriptionBtn || !additionalInfoBtn || !reviewsBtn) return;
 
     function setActiveTab(activeBtn) {
       tabButtons.forEach((btn) => {
         btn.classList.remove("border-b");
         btn.classList.add("text-gray");
+        btn.classList.add("dark:text-dark-gold/50");
       });
+
       activeBtn.classList.remove("text-gray");
+      activeBtn.classList.remove("dark:text-dark-gold/50");
       activeBtn.classList.add("border-b");
 
-      tabContents.forEach((content) => content.classList.add("hidden"));
+      tabContents.forEach((content) => {
+        content.classList.add("hidden");
+      });
 
       const target = document.getElementById(activeBtn.dataset.target);
-      target.classList.remove("hidden");
+
+      if (target) {
+        target.classList.remove("hidden");
+      }
     }
 
     tabButtons.forEach((btn) => {
-      btn.addEventListener("click", () => setActiveTab(btn));
+      btn.addEventListener("click", () => {
+        setActiveTab(btn);
+      });
     });
   }
+
 
   function initReviewForm() {
     const stars = document.querySelectorAll(".rating-star");
     const input = document.getElementById("ratingValue");
     const form = document.getElementById("formulario");
+
+    if (!stars.length || !input || !form) return;
+
     let selected = 0;
 
     function paint(value) {
@@ -521,9 +774,16 @@ const defaultSwatchClass =
       });
     }
 
+
     stars.forEach((star, index) => {
-      star.addEventListener("mouseenter", () => paint(index + 1));
-      star.addEventListener("mouseleave", () => paint(selected));
+      star.addEventListener("mouseenter", () => {
+        paint(index + 1);
+      });
+
+      star.addEventListener("mouseleave", () => {
+        paint(selected);
+      });
+
       star.addEventListener("click", () => {
         selected = index + 1;
         input.value = selected;
@@ -531,7 +791,9 @@ const defaultSwatchClass =
       });
     });
 
+
     paint(0);
+
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -546,7 +808,9 @@ const defaultSwatchClass =
         year: "numeric",
       });
 
+
       let starsMarkup = "";
+
       for (let i = 1; i <= 5; i++) {
         starsMarkup +=
           i <= rating
@@ -554,22 +818,26 @@ const defaultSwatchClass =
             : `<i class="fa-solid fa-star text-transparent [-webkit-text-stroke:1px_orange] text-[12px]"></i>`;
       }
 
+
       const reviewHTML = `
-      <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
-        <div class="flex gap-3">
-          <img src="https://picsum.photos/200" alt="" class="w-[65px] h-[65px] rounded-full" />
-          <div class="flex flex-col">
-            <p class="text-[13px]">${name} <span class="text-gray">– ${today}</span></p>
-            <p class="text-[14px]">${review}</p>
+        <div class="flex flex-col gap-4 items-start w-full border-b border-gray/20 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:gap-10 lg:gap-16">
+          <div class="flex gap-3">
+            <img src="https://picsum.photos/200" alt="profile picture" class="w-[65px] h-[65px] rounded-full" />
+            <div class="flex flex-col">
+              <p class="text-[13px] dark:text-white">${name} <span class="text-gray">– ${today}</span></p>
+              <p class="text-[14px] dark:text-white">${review}</p>
+            </div>
           </div>
+
+          <span class="flex">${starsMarkup}</span>
         </div>
-        <span class="flex">${starsMarkup}</span>
-      </div>
-    `;
+      `;
+
 
       document
         .getElementById("reviews")
         .insertAdjacentHTML("beforeend", reviewHTML);
+
 
       form.reset();
       selected = 0;
@@ -577,6 +845,7 @@ const defaultSwatchClass =
       paint(0);
     });
   }
+
 
   initImageZoom();
   initProductOptions();

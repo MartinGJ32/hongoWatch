@@ -5,6 +5,7 @@ const {
   title,
   price,
   image,
+  imgDark,
   id
 } = Astro.props;
 
@@ -25,9 +26,7 @@ const imgClasses: Record<string, string> = {
 
 <article
   class:list={[
-    
     "group flex w-full flex-col items-center gap-3 p-4 text-center",
-    
     "md:relative md:h-full md:items-start md:justify-end md:overflow-hidden md:p-6 md:text-left lg:p-10",
     spanClasses[variant],
   ]}
@@ -37,7 +36,17 @@ const imgClasses: Record<string, string> = {
       src={image}
       alt={title}
       class:list={[
-        "h-auto w-full object-contain",
+        "h-auto w-full object-contain block dark:hidden",
+        "md:h-full md:w-full md:origin-center md:object-top md:transition-transform md:duration-300",
+        imgClasses[variant],
+      ]}
+    />
+
+    <img
+      src={imgDark}
+      alt={title}
+      class:list={[
+        "h-auto w-full object-contain hidden dark:block",
         "md:h-full md:w-full md:origin-center md:object-top md:transition-transform md:duration-300",
         imgClasses[variant],
       ]}
@@ -45,15 +54,28 @@ const imgClasses: Record<string, string> = {
   </a>
 
   <div class="z-10 flex flex-col items-center md:absolute md:top-4 md:left-6 md:items-start lg:top-6 lg:left-10">
-    <a href=""><h3 class="font-medium text-dark text-sm sm:text-base lg:text-lg">{title}</h3></a>
-    <p class="text-gray text-xs sm:text-sm lg:text-base">{price}</p>
+    <a href={`/product/${id}`}>
+      <h3 class="text-sm font-medium text-dark dark:text-dark-text sm:text-base lg:text-lg">
+        {title}
+      </h3>
+    </a>
+    <p class="text-xs text-gray dark:text-dark-text-muted sm:text-sm lg:text-base">
+      {price}
+    </p>
   </div>
 
-  <div class="z-10 flex w-full items-center justify-end gap-3 opacity-100 transition-opacity duration-300 md:justify-between lg:opacity-0 lg:group-hover:opacity-100">
-    <button class="text-[13px] underline decoration-2 underline-offset-2 sm:text-[14px] lg:text-[15px]">Add to cart</button>
+  <div class="z-10 flex w-full items-center justify-end mb-4 gap-3 opacity-100 transition-opacity duration-300 md:justify-between lg:opacity-0 lg:group-hover:opacity-100 dark:text-dark-text">
+    <button class="text-[11px] bot sm:text-[11px] lg:text-[11px] btn-dark py-1 px-3">
+      Add to cart
+    </button>
+
     <div class="flex gap-4 text-sm sm:text-base lg:text-lg">
-      <button aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-      <button aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+      <button aria-label="Add to wishlist">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+      <button aria-label="Add to cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
     </div>
   </div>
 </article>

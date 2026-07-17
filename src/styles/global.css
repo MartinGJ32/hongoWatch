@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Fonts */
   --font-sans: "niveau-grotesk", sans-serif;
@@ -18,11 +20,27 @@
   --color-gray: #808080;
   --color-light-gray: #999999;
 
+  /* Dark mode */
+
+  --color-dark-bg: #181412;
+  --color-dark-surface: #231d1a;
+  --color-dark-surface-2: #2d2622;
+
+  --color-dark-border: #453d38;
+
+  --color-dark-text: #f1ebe5;
+  --color-dark-text-secondary: #c8beb7;
+  --color-dark-text-muted: #a39891;
+
+  --color-dark-gold: #d7b08c;
+
+
   /* Animations */
   --animate-slide-in: slideIn .7s ease forwards;
   --animate-slide-up: slideUp .7s ease forwards;
-}
 
+
+}
 
 @keyframes slideIn {
   from {
@@ -36,7 +54,6 @@
   }
 }
 
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -49,36 +66,47 @@
   }
 }
 
-
 @layer components {
+
 
   .footer-column {
     @apply flex w-full flex-col gap-4 px-8 md:w-1/2 lg:w-1/5;
   }
 
-  .footer-line {
-    @apply relative;
-  }
+ .footer-line {
+  position: relative;
+}
 
+.footer-line::after {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 0.01rem;
+  height: 11rem;
+  background-color: #3f3d3d;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
   .footer-line::after {
-    content: "";
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-60%);
-    width: 0.01rem;
-    height: 11rem;
-    background-color: #3f3d3d;
-    pointer-events: none;
+    display: block;
   }
+}
 
+@media (max-width: 1023px) {
+  .footer-line::after {
+    display: none;
+  }
+}
   .decor-line {
     @apply relative pl-4;
   }
 
   .decor-line::before {
     content: "";
-    @apply absolute block left-0;
+    @apply absolute left-0 block;
     top: 50%;
     width: 9px;
     height: 2px;
@@ -86,4 +114,95 @@
     transform: translateY(-50%);
   }
 
+  /*Layout*/
+
+  .section {
+    @apply w-full px-6 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-20;
+  }
+
+  .section-header {
+    @apply flex flex-col items-center;
+  }
+
+  .section-title {
+    @apply text-[24px] font-medium sm:text-[26px] lg:text-[30px];
+  }
+
+  .section-subtitle {
+    @apply text-[14px] text-gray;
+  }
+
+  .flex-center-column {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .banner-image {
+    @apply h-64 w-full bg-cover bg-center sm:h-96 lg:h-120;
+  }
+
+  /*Sidebar / Filters*/
+
+  .filter-group {
+    @apply flex flex-col gap-4 border-b border-gray/20 pb-8 text-[13px];
+  }
+
+  .filter-option {
+    @apply flex items-center gap-2;
+  }
+
+  .color-circle {
+    @apply flex h-4 w-4 items-center justify-center rounded-full text-transparent group-hover:text-white;
+  }
+
+  .size-circle {
+    @apply flex h-4 w-4 items-center justify-center rounded-full border border-gray text-transparent group-hover:text-gold;
+  }
+
+  .tag-button {
+    @apply rounded border border-gray/20 bg-transparent px-[13px] py-[5px] text-[10px] uppercase transition-all duration-300 ease-out hover:border-none hover:bg-dark hover:text-white;
+  }
+
+  /*Buttons */
+
+  .btn-dark {
+    @apply border-2 border-transparent bg-dark text-white transition-all duration-300 ease-out hover:border-dark hover:bg-transparent hover:text-dark dark:hover:text-white dark:hover:border-white;
+  }
+
+  .btn-gold {
+    @apply border-2 border-gold bg-gold text-white transition-all duration-300 ease-out hover:bg-transparent hover:text-gold;
+  }
+
+  .btn-gold-outline {
+    @apply rounded border-2 border-gold bg-transparent text-gold transition-all duration-300 ease-out hover:bg-gold hover:text-white;
+  }
+
+  /*Forms*/
+
+  .form-field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .form-input {
+    @apply w-full border-b border-gray pb-1.5 text-[15px] font-light text-gray;
+  }
+
+  /*Pagination*/
+
+  .pagination-button {
+    @apply flex size-9 items-center justify-center rounded-full border border-transparent text-[14px] text-gray transition-all duration-300 ease-out hover:border-gray/50;
+  }
+
+  .pagination-button-active {
+    @apply flex size-9 items-center justify-center rounded-full bg-gray text-[14px] text-white;
+  }
+
+  /*Icon Rows*/
+
+  .icon-row {
+    @apply flex items-center gap-3;
+  }
+
+  .icon-row-start {
+    @apply flex items-start gap-5;
+  }
 }

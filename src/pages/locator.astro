@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import WathcTitle from "../assets/images/size/watch-title-img-01-1.jpg";
 import Map from "../assets/images/locator/watch-56.jpg.webp";
+import DarkMap from "../assets/images/locator/dark-watch-56.jpg.png";
 import locationImg1 from "../assets/images/locator/fashion-store-locator-01-1.jpg.webp";
 import locationImg2 from "../assets/images/locator/fashion-store-locator-02-1.jpg.webp";
 import locationImg3 from "../assets/images/locator/fashion-store-locator-03-1.jpg.webp";
@@ -12,63 +13,82 @@ import SaleLoctaion from "../components/locator/saleLoctaion.astro";
 ---
 
 <Layout name="Hongo - Store locator">
-   <!-- hero section -->
+  <!-- hero section -->
   <Hero
     title="Store locator"
     description="worldwide fashion store"
     image={WathcTitle.src}
   />
 
-
-
-
   <!-- worlwide stores section -->
-  <section class="flex flex-col lg:flex-row w-full items-center py-12 px-6 sm:py-16 sm:px-10 lg:pb-30 lg:px-20 bg-white gap-8 lg:gap-0">
+  <section
+    class="flex flex-col lg:flex-row w-full items-center py-12 px-6 sm:py-16 sm:px-10 lg:pb-30 lg:px-20 bg-white dark:bg-dark-surface-2 gap-8 lg:gap-0"
+  >
     <div class="flex-1 flex justify-center lg:justify-end pr-0 lg:pr-20">
-      <div class="relative flex max-w-[320px] sm:max-w-[450px] lg:max-w-[550px] h-[70px] sm:h-[90px] lg:h-[110px] items-center">
+      <div
+        class="relative flex max-w-[320px] sm:max-w-[450px] lg:max-w-[550px] h-[70px] sm:h-[90px] lg:h-[110px] items-center"
+      >
         <p
-          class="absolute top-1/2 -translate-y-1/2 text-[60px] sm:text-[85px] lg:text-[110px] font-bold text-gray/20"
+          class="absolute top-1/2 -translate-y-1/2 text-[60px] sm:text-[85px] lg:text-[110px] font-bold text-gray/20 dark:text-dark-text-muted/20"
         >
           2780
         </p>
 
-        <h3 class="relative z-10 text-[13px] sm:text-[14px] lg:text-[15px] uppercase font-medium">
+        <h3
+          class="relative z-10 text-[13px] sm:text-[14px] lg:text-[15px] uppercase font-medium dark:text-dark-text"
+        >
           More than 2780 worldwide stores
         </h3>
       </div>
     </div>
 
-    <div class="w-full h-px lg:w-px lg:h-[120px] bg-gray/20"></div>
+    <div
+      class="w-full h-px lg:w-px lg:h-[120px] bg-gray/20 dark:bg-dark-border"
+    >
+    </div>
 
-    <div class="flex-1 flex justify-center lg:justify-start pl-0 lg:pl-20 text-center lg:text-left">
-      <p class="max-w-[320px] sm:max-w-[420px] text-[16px] sm:text-[18px] lg:text-[20px]">
+    <div
+      class="flex-1 flex justify-center lg:justify-start pl-0 lg:pl-20 text-center lg:text-left"
+    >
+      <p
+        class="max-w-[320px] sm:max-w-[420px] text-[16px] sm:text-[18px] lg:text-[20px] dark:text-dark-text"
+      >
         Your premium brand had better be delivering something special or it's
         not going to get the business
       </p>
     </div>
   </section>
 
-
-
   <!--map section -->
   <section
-    class="bg-[rgb(246,246,246)] min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] relative flex flex-col w-full justify-end items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-4"
+    class="bg-[rgb(246,246,246)] dark:bg-dark-surface min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] relative flex flex-col w-full justify-end items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-4"
   >
-    <img src={Map.src} alt="" class="absolute z-0 w-full h-full object-cover" />
-    <p class="z-1 text-[16px] sm:text-[18px] lg:text-[20px] max-w-60 text-center">
+    <img
+      src={Map.src}
+      alt="Map"
+      class="absolute z-0 w-full h-full object-cover dark:hidden"
+    />
+    <img
+      src={DarkMap.src}
+      alt="Map"
+      class="absolute z-0 w-full h-full object-cover hidden dark:block"
+    />
+    <p
+      class="z-1 text-[16px] sm:text-[18px] lg:text-[20px] max-w-60 text-center dark:text-dark-gold"
+    >
       Worldwide all hongo fashion store locations
     </p>
-    <button id="down-button"
-      class="z-1 rounded-full bg-white w-[37px] h-[37px] animate-bounce hover:bg-gold hover:text-white cursor-pointer"
+    <button
+      id="down-button"
+      class="z-1 rounded-full bg-white dark:bg-dark-gold dark:text-dark-text w-[37px] h-[37px] animate-bounce hover:bg-gold hover:text-white cursor-pointer"
       >🡓</button
     >
   </section>
 
-
-
   <!--world stores section -->
-  <section id="locationsSection"
-    class="flex w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-[rgb(246,246,246)]"
+  <section
+    id="locationsSection"
+    class="flex w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-[rgb(246,246,246)] dark:bg-dark-surface"
   >
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-5">
       <Location
@@ -106,21 +126,21 @@ Suite 21, Netherlands"
     </div>
   </section>
 
-
-
   <!--style life section -->
   <section
-    class="bg-white relative flex flex-col lg:flex-row w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-6 lg:gap-8"
+    class="bg-white dark:bg-dark-bg relative flex flex-col lg:flex-row w-full justify-center items-center py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 gap-6 lg:gap-8"
   >
     <div class="max-w-[530px]">
-      <h3 class="text-[12px] text-gold decor-line ml-2">STYLE LIFE IS SHORT</h3><p
-        class="font-semibold text-[18px] sm:text-[20px]"
+      <h3 class="text-[12px] text-gold dark:text-dark-gold decor-line ml-2">
+        STYLE LIFE IS SHORT
+      </h3><p
+        class="font-semibold text-[18px] sm:text-[20px] dark:text-dark-text"
       >
         A classic never goes out of style life is short, make every outfit count
         fashion is just another accessory for someone with great style
       </p>
     </div>
-    <p class="max-w-[590px] text-[14px] text-gray">
+    <p class="max-w-[590px] section-subtitle dark:text-dark-text-muted">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum been the industry’s standard dummy text ever since the when an
       unknown printer took a galley of type and scrambled it to make a type
@@ -130,12 +150,10 @@ Suite 21, Netherlands"
     </p>
   </section>
 
-
-
   <!-- images section -->
   <section class="flex flex-col lg:flex-row w-full">
     <div
-      class="w-full lg:w-120 min-h-[220px] sm:min-h-[260px] lg:h-120 bg-gold py-10 sm:py-8 lg:py-[20px] px-6 sm:px-10 lg:px-[80px] flex flex-col justify-center gap-2 lg:gap-0"
+      class="w-full lg:w-120 min-h-[220px] sm:min-h-[260px] lg:h-120 bg-gold dark:bg-dark-gold py-10 sm:py-8 lg:py-[20px] px-6 sm:px-10 lg:px-[80px] flex flex-col justify-center gap-2 lg:gap-0"
     >
       <h4 class="text-[12px] text-white">NEW OPEN THE STORE</h4>
       <p class="text-[22px] sm:text-[26px] lg:text-[28px] text-white">
@@ -150,34 +168,46 @@ Suite 21, Netherlands"
       class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/locator/fashion-store-locator-09.jpg')] bg-cover bg-center"
     >
     </div>
-    <div class="bg-dark w-full lg:w-120 min-h-[420px] lg:h-120 flex flex-col justify-center items-center px-6 py-10 lg:px-0 lg:py-0">
-      <h4 class="max-w-[250px] text-[18px] sm:text-[20px] text-white">Fashion shop feelings and relax day enjoy weekend!</h4>
-      <div class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start">
-        <i class="text-[14px] text-gold">D</i>
+    <div
+      class="bg-dark w-full lg:w-120 min-h-[420px] lg:h-120 flex flex-col justify-center items-start pl-30 px-6 py-10  lg:py-0"
+    >
+      <h4 class="max-w-[250px] text-[18px] sm:text-[20px] text-white">
+        Fashion shop feelings and relax day enjoy weekend!
+      </h4>
+      <div
+        class="flex gap-2 border-b border-gray/30 py-3 max-w-70 items-start"
+      >
+        <i class="text-[14px] text-gold fa-solid fa-check"></i>
         <p class="text-[14px] text-gray font-light">
           Dress like you’re already famous
         </p>
       </div>
-      <div class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start">
-        <i class="text-[14px] text-gold">D</i>
+      <div
+        class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start"
+      >
+        <i class="text-[14px] text-gold fa-solid fa-check"></i>
         <p class="text-[14px] text-gray font-light">
           Life is short, make every outfit count
         </p>
       </div>
-      <div class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start">
-        <i class="text-[14px] text-gold">D</i>
+      <div
+        class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start"
+      >
+        <i class="text-[14px] text-gold fa-solid fa-check"></i>
         <p class="text-[14px] text-gray font-light">
           Fashion feeds me more than food!
         </p>
       </div>
-      <div class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start">
-        <i class="text-[14px] text-gold">D</i>
+      <div
+        class="flex gap-2 border-b border-gray/30 py-3 max-w-70 justify-start"
+      >
+        <i class="text-[14px] text-gold fa-solid fa-check"></i>
         <p class="text-[14px] text-gray font-light">
           Dress how you want to be addressed
         </p>
       </div>
       <div class="flex gap-2 py-3 max-w-70 justify-start">
-        <i class="text-[14px] text-gold">D</i>
+        <i class="text-[14px] text-gold fa-solid fa-check"></i>
         <p class="text-[14px] text-gray font-light">
           Life is too short to wear boring clothes
         </p>
@@ -189,77 +219,110 @@ Suite 21, Netherlands"
     </div>
   </section>
 
-
-
   <!-- list section -->
-    <section
-    class="flex w-full items-center justify-center h-auto py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20 gap-8 sm:gap-12 lg:gap-20 bg-white"
+  <section
+    class="flex w-full items-center justify-center h-auto py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20 gap-8 sm:gap-12 lg:gap-20 bg-white dark:bg-dark-bg"
   >
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-18">
       <div
-        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="w-full lg:max-w-[270px] lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
-        <i class="text-[20px] text-gold">A</i>
-        <h4 class="text-center text-[13px]">Free deliver all time</h4>
-        <p class="text-center text-[14px] text-gray">
+        <i class="fa-solid fa-house text-[30px] text-gold dark:text-dark-gold"
+        ></i>
+
+        <h4 class="text-center text-[13px] dark:text-dark-text">
+          Free deliver all time
+        </h4>
+
+        <p class="text-center section-subtitle dark:text-dark-text-muted">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum standard dummy text.
         </p>
       </div>
 
       <div
-        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="w-full lg:max-w-[270px] lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
-        <i class="text-[20px] text-gold">A</i>
-        <h4 class="text-center text-[13px]">24 hours expert support</h4>
-        <p class="text-center text-[14px] text-gray">
+        <i class="fa-solid fa-headset text-[30px] text-gold dark:text-dark-gold"
+        ></i>
+
+        <h4 class="text-center text-[13px] dark:text-dark-text">
+          24 hours expert support
+        </h4>
+
+        <p class="text-center section-subtitle dark:text-dark-text-muted">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum standard dummy text.
         </p>
       </div>
 
       <div
-        class="max-w-[270px] mx-auto h-auto lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
+        class="w-full lg:max-w-[270px] lg:max-h-[150px] flex flex-col items-center justify-center gap-2"
       >
-        <i class="text-[20px] text-gold">A</i>
-        <h4 class="text-center text-[13px]">Money back policy</h4>
-        <p class="text-center text-[14px] text-gray">
+        <i
+          class="fa-solid fa-briefcase text-[30px] text-gold dark:text-dark-gold"
+        ></i>
+
+        <h4 class="text-center text-[13px] dark:text-dark-text">
+          Money back policy
+        </h4>
+
+        <p class="text-center section-subtitle dark:text-dark-text-muted">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum standard dummy text.
         </p>
       </div>
-    
     </div>
   </section>
 
-
-
   <!-- saleLocation section -->
-  <section  class=" grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 bg-[rgb(246,246,246)] py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20">
+  <section
+    class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 bg-[rgb(246,246,246)] dark:bg-dark-surface py-16 px-6 sm:py-24 sm:px-10 lg:py-40 lg:px-20 justify-items-center"
+  >
     <SaleLoctaion />
     <SaleLoctaion />
     <SaleLoctaion />
   </section>
 
-
-
   <!-- brands section -->
-  <section class="flex flex-wrap bg-white py-12 px-6 sm:py-16 sm:px-16 lg:py-20 lg:px-50 gap-8 sm:gap-16 lg:gap-30 justify-center items-center">
-    <img src="src\assets\images\locator\companies\brands-1-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
-    <img src="src\assets\images\locator\companies\brands-2-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
-    <img src="src\assets\images\locator\companies\brands-3-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
-    <img src="src\assets\images\locator\companies\brands-4-2.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
-    <img src="src\assets\images\locator\companies\brands-5-1.png.webp" alt="" class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto">
+  <section
+    class="flex flex-wrap bg-white dark:bg-dark-bg py-12 px-6 sm:py-16 sm:px-16 lg:py-20 lg:px-50 gap-8 sm:gap-16 lg:gap-30 justify-center items-center"
+  >
+    <img
+      src="src\assets\images\locator\companies\brands-1-2.png.webp"
+      alt="Brand 1"
+      class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto"
+    />
+    <img
+      src="src\assets\images\locator\companies\brands-2-1.png.webp"
+      alt="Brand 2"
+      class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto"
+    />
+    <img
+      src="src\assets\images\locator\companies\brands-3-2.png.webp"
+      alt="Brand 3"
+      class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto"
+    />
+    <img
+      src="src\assets\images\locator\companies\brands-4-2.png.webp"
+      alt="Brand 4"
+      class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto"
+    />
+    <img
+      src="src\assets\images\locator\companies\brands-5-1.png.webp"
+      alt="Brand 5"
+      class="max-w-[100px] sm:max-w-[120px] lg:max-w-none w-auto h-auto"
+    />
   </section>
 </Layout>
 
 <script>
   let downButton = document.getElementById("down-button");
-  let locationSection = document.getElementById("locationsSection")
+  let locationSection = document.getElementById("locationsSection");
 
   function scrollDown() {
-     locationSection.scrollIntoView({ behavior: "smooth" });
+    locationSection.scrollIntoView({ behavior: "smooth" });
   }
 
-  downButton?.addEventListener("click", scrollDown)
+  downButton?.addEventListener("click", scrollDown);
 </script>

@@ -4,28 +4,66 @@ const {
   priceFrom,
   priceTo,
   id,
-  img
+  img,
+  imgDark,
 } = Astro.props;
-
-
 ---
 
+<article class="bg-transparent p-3 hover:bg-white dark:hover:bg-dark-surface-2 h-auto max-w-[250px] space-y-8 group relative" id="watch">
+  <img
+    src={img}
+    alt={name}
+    class="cover block dark:hidden"
+  />
 
+  <img
+    src={imgDark}
+    alt={name}
+    class="cover hidden dark:block"
+  />
 
-<article class="bg-transparent p-3 hover:bg-white h-auto max-w-[250px] space-y-8 group relative" id="watch">
-  <img src={img} alt="" class="cover"/>
-  <div class="flex justify-between absolute top-62 left-18">
-    <div class="absolute flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 gap-2" id="buttons">
-      <button class="border border-dark bg-dark rounded p-1"><i class="fa-regular fa-heart text-white"></i></button>
-      <button class="border border-dark bg-dark rounded p-1"><i class="fa-regular fa-eye text-white"></i></button>
-       <button class="border border-dark bg-dark rounded p-1"><i class="fa-solid fa-cart-shopping text-white"></i></button>
+  <div class="absolute top-62 left-18 flex justify-between">
+    <div
+      class="absolute flex items-center justify-center gap-2 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+      id="buttons"
+    >
+      <button class="rounded border border-dark bg-dark p-1">
+        <i class="fa-regular fa-heart text-white"></i>
+      </button>
+
+      <button class="rounded border border-dark bg-dark p-1">
+        <i class="fa-regular fa-eye text-white"></i>
+      </button>
+
+      <button class="rounded border border-dark bg-dark p-1">
+        <i class="fa-solid fa-cart-shopping text-white"></i>
+      </button>
     </div>
   </div>
-  <div class="flex flex-col justify-center items-center">
-    <h5 class="text-[14px] hover:text-gold">
+
+  <div class="flex-center-column">
+    <h5 class="text-[14px] hover:text-gold dark:text-dark-text dark:hover:text-dark-gold">
       <a href={`/product/${id}`}>{name}</a>
     </h5>
-    <p class="text-[14px] text-gray">£{priceFrom} - £{priceTo}</p>
+
+    <p class="section-subtitle dark:text-dark-text-muted">
+      £{priceFrom} - £{priceTo}
+    </p>
   </div>
 </article>
 
+<script>
+  const images = document.querySelectorAll("[data-watch-image]");
+
+  const updateImages = () => {
+    const dark = document.documentElement.classList.contains("dark");
+
+    images.forEach((img) => {
+      img.src = dark
+        ? img.dataset.dark
+        : img.dataset.light;
+    });
+  };
+
+  updateImages();
+</script>

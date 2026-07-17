@@ -82,11 +82,11 @@ function getFlag(country: string) {
 }
 ---
 
-<article class="bg-white">
+<article class="bg-white dark:bg-dark-surface-2">
   <img
     src={image}
-    alt=""
-    class="object-cover max-w-[325px] max-h-[415px]"
+    alt= `store in ${country}`
+    class="object-cover w-auto max-h-[415px]"
   />
   <div class="flex flex-col justify-center p-10 max-w-85 gap-5">
     <div class="flex items-center gap-1">
@@ -95,19 +95,19 @@ function getFlag(country: string) {
         alt=""
         class="w-[26px] h-[18px] object-cover"
       />
-      <h3 class="text-[12px] font-semibold">{country}</h3>
+      <h3 class="text-[12px] font-semibold dark:text-dark-text">{country}</h3>
     </div>
-    <div class="flex flex-col pb-5 border-b border-gray/20">
-      <p class="text-[14px] text-gray font-normal">
+    <div class="flex flex-col pb-5 border-b border-gray/20 dark:border-dark-border">
+      <p class="section-subtitle font-normal dark:text-dark-text-muted">
         {address}
       </p>
     </div>
-    <div class="flex flex-col gap-2 text-gray">
+    <div class="flex flex-col gap-2 text-gray dark:text-dark-text-muted">
       <p class="pr-5 text-[12px]">
-        <span class="text-black">Phone:</span> +{phoneNumber}
+        <span class="text-black dark:text-dark-text">Phone:</span> +{phoneNumber}
       </p>
       <p class="text-[12px]">
-        <span class="text-black">Email:</span> {email}
+        <span class="text-black dark:text-dark-text">Email:</span> {email}
       </p>
     </div>
   </div>

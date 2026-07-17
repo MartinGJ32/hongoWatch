@@ -10,11 +10,11 @@ import Hero from "../components/general/hero.astro";
   <!-- Hero -->
   <Hero title="Contact classic" description="the truth touches us" image={teamImg.src} />
   <section
-    class="flex flex-col w-full h-full bg-[#f7f7f7] py-12 px-6 sm:py-16 sm:px-10 lg:py-25 lg:px-20 items-center justify-center"
+    class="section flex-center-column h-full bg-[#f7f7f7] lg:py-25 dark:bg-dark-surface"
   >
-    <div class="flex flex-col max-w-90 items-center justify-center space-y-3">
-      <h3 class="text-gold text-[12px]">STAY TOUCH WITH US</h3>
-      <p class="text-[20px] sm:text-[22px] lg:text-[25px] text-center">
+    <div class="flex-center-column max-w-90 space-y-3">
+      <h3 class="text-gold text-[12px] dark:text-dark-gold">STAY TOUCH WITH US</h3>
+      <p class="text-[20px] sm:text-[22px] lg:text-[25px] text-center dark:text-dark-text">
         Contact us to find out more or how we can help you
       </p>
     </div>
@@ -25,32 +25,32 @@ import Hero from "../components/general/hero.astro";
 
   
   <!-- numbers section -->
-  <section class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full py-12 px-6 sm:py-16 sm:px-10 lg:py-20 lg:px-20 bg-white">
+  <section class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 section bg-white dark:bg-dark-bg justify-items-center">
     <div
-      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex flex-col justify-center items-center border-4 border-transparent hover:border-gold"
+      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex-center-column border-4 border-transparent hover:border-gold dark:hover:border-dark-gold"
     >
-      <p class="text-[28px] sm:text-[34px] lg:text-[40px]">22</p><h4 class="text-[11px] uppercase">
+      <p class="text-[28px] sm:text-[34px] lg:text-[40px] dark:text-dark-text">22</p><h4 class="text-[11px] uppercase dark:text-dark-text-secondary">
         HAPPY CLIENTS
       </h4>
     </div>
     <div
-      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex flex-col justify-center items-center border-4 border-transparent hover:border-gold"
+      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex-center-column border-4 border-transparent hover:border-gold dark:hover:border-dark-gold"
     >
-      <p class="text-[28px] sm:text-[34px] lg:text-[40px]">33</p><h4 class="text-[11px] uppercase">
+      <p class="text-[28px] sm:text-[34px] lg:text-[40px] dark:text-dark-text">33</p><h4 class="text-[11px] uppercase dark:text-dark-text-secondary">
         work completed
       </h4>
     </div>
     <div
-      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex flex-col justify-center items-center border-4 border-transparent hover:border-gold"
+      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex-center-column border-4 border-transparent hover:border-gold dark:hover:border-dark-gold"
     >
-      <p class="text-[28px] sm:text-[34px] lg:text-[40px]">52</p><h4 class="text-[11px] uppercase">
+      <p class="text-[28px] sm:text-[34px] lg:text-[40px] dark:text-dark-text">52</p><h4 class="text-[11px] uppercase dark:text-dark-text-secondary">
         award winning
       </h4>
     </div>
     <div
-      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex flex-col justify-center items-center border-4 border-transparent hover:border-gold"
+      class="transition-all delay-150 duration-300 ease-in-out px-3 py-8 sm:px-5 sm:py-14 w-full h-auto sm:w-57 sm:h-14 flex-center-column border-4 border-transparent hover:border-gold dark:hover:border-dark-gold"
     >
-      <p class="text-[28px] sm:text-[34px] lg:text-[40px]">28</p><h4 class="text-[11px] uppercase">
+      <p class="text-[28px] sm:text-[34px] lg:text-[40px] dark:text-dark-text">28</p><h4 class="text-[11px] uppercase dark:text-dark-text-secondary">
         TELEPHONIC TALK
       </h4>
     </div>
@@ -62,11 +62,11 @@ import Hero from "../components/general/hero.astro";
 
   <!-- contact info section -->
   <section
-    class="w-full h-auto min-h-[600px] sm:min-h-[800px] lg:h-250 relative items-center justify-center flex flex-col space-y-10 sm:space-y-16 lg:space-y-30 bg-white py-14 lg:py-0"
+    class="w-full h-auto min-h-[600px] sm:min-h-[800px] lg:h-250 relative flex-center-column space-y-10 sm:space-y-16 lg:space-y-30 bg-white dark:bg-dark-bg py-14 lg:py-0"
   >
     <img
       src={womanBeachImg.src}
-      alt=""
+      alt="woman at the beach"
       class="absolute inset-0 w-full h-1/2 object-cover object-top "
     />
      <div class="absolute inset-0 h-1/2 bg-gold/80"></div>
@@ -81,11 +81,11 @@ import Hero from "../components/general/hero.astro";
       >
       </div>
       <div
-        class="w-full max-w-[320px] lg:max-w-none min-h-[300px] lg:w-120 lg:h-120 bg-dark bg-cover bg-center border-10 border-white p-6 sm:p-8 lg:p-10 flex flex-col justify-center items-center gap-8"
+        class="w-full max-w-[320px] lg:max-w-none min-h-[300px] lg:w-120 lg:h-120 bg-dark dark:bg-dark-surface-2 bg-cover bg-center border-10 border-white p-6 sm:p-8 lg:p-10 flex-center-column gap-8"
       >
         <h4 class="text-[30px] text-white">How we can help you?</h4>
         <div
-          class="flex items-start justify-center gap-5 border-b border-gray/50 w-60 pb-5"
+          class="icon-row-start justify-center border-b border-gray/50 w-60 pb-5"
         >
           <i class="text-gold text-[40px] fa-solid fa-headphones"></i><div class="flex flex-col items-start justify-center">
             <p class="text-white text-[12px]">
@@ -109,7 +109,7 @@ import Hero from "../components/general/hero.astro";
         </div>
 
         <div
-          class="flex items-start justify-center gap-5 border-b border-gray/50 w-60 pb-5"
+          class="icon-row-start justify-center border-b border-gray/50 w-60 pb-5"
         >
           <i class="text-gold text-[40px] fa-solid fa-pen-to-square"></i><div class="flex flex-col items-start justify-center">
             <p class="text-white text-[12px]">
@@ -123,12 +123,12 @@ import Hero from "../components/general/hero.astro";
     </div>
 
     <div class="mx-6 sm:mx-10 lg:mx-20 z-10 relative grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-start">
-  <p class="text-[18px] sm:text-[20px] lg:text-[22px] text-dark leading-snug">
+  <p class="text-[18px] sm:text-[20px] lg:text-[22px] text-dark leading-snug dark:text-dark-text">
     You could argue that fashion has been playing the content marketing game
     for a long time now. Fashion shop feelings and relax day enjoy happy
     weekend!
   </p>
-  <p class="text-[14px] sm:text-[15px] text-gray leading-relaxed">
+  <p class="text-[14px] sm:text-[15px] text-gray leading-relaxed dark:text-dark-text-secondary">
     Lorem Ipsum is simply dummy text of the typesetting industry It has
     survived not only five centuries, but also the leap into electronic
     typesetting, remaining essentially of unchanged lorem Ipsum is simply
@@ -156,7 +156,7 @@ import Hero from "../components/general/hero.astro";
       loading="lazy"
       referrerpolicy="strict-origin-when-cross-origin"></iframe>
     <div
-      class="h-auto lg:h-full w-full lg:w-160 bg-dark flex flex-col justify-center p-8 sm:p-12 lg:p-[114px] gap-6 sm:gap-10 lg:gap-15"
+      class="h-auto lg:h-full w-full lg:w-160 bg-dark dark:bg-dark-surface-2 flex flex-col justify-center p-8 sm:p-12 lg:p-[114px] gap-6 sm:gap-10 lg:gap-15"
     >
       <div class="flex flex-col space-y-2">
         <p class="text-gold uppercase text-[12px]">
@@ -168,26 +168,26 @@ import Hero from "../components/general/hero.astro";
       </div>
 
       <form id="contact-form" novalidate class="flex flex-col gap-6 sm:gap-8 lg:gap-10">
-        <div class="flex flex-col gap-1.5">
+        <div class="form-field">
           <input
             type="text"
             name="name"
             id="contact-name"
             placeholder="Name*"
             required
-            class="w-full text-gray font-light border-b border-gray text-[15px] pb-1.5"
+            class="form-input"
           />
           <p id="error-name" class="hidden text-[12px] text-red-400"></p>
         </div>
 
-        <div class="flex flex-col gap-1.5">
+        <div class="form-field">
           <input
             type="email"
             name="email"
             id="contact-email"
             placeholder="email*"
             required
-            class="w-full text-gray font-light border-b border-gray text-[15px] pb-1.5"
+            class="form-input"
           />
           <p id="error-email" class="hidden text-[12px] text-red-400"></p>
         </div>
@@ -197,16 +197,16 @@ import Hero from "../components/general/hero.astro";
           name="subject"
           id="contact-subject"
           placeholder="Subject"
-          class="w-full text-gray font-light border-b border-gray text-[15px] pb-1.5"
+          class="form-input"
         />
 
-        <div class="flex flex-col gap-1.5">
+        <div class="form-field">
           <textarea
             name="message"
             id="contact-message"
             placeholder="Your mensaje"
             required
-            class="w-full text-gray font-light border-b border-gray text-[15px] pb-1.5"
+            class="form-input"
           ></textarea>
           <p id="error-message" class="hidden text-[12px] text-red-400"></p>
         </div>
@@ -218,7 +218,7 @@ import Hero from "../components/general/hero.astro";
         />
       </form>
 
-      <div id="form-success" class="hidden flex flex-col gap-3 justify-center items-center border-2 p-2 border-gold">
+      <div id="form-success" class="hidden flex-center-column gap-3 border-2 p-2 border-gold">
         <p class="text-gold uppercase text-[12px]">Message sent</p>
         <p class="text-white text-[20px] sm:text-[22px] lg:text-[25px] text-center">
           Thanks for reaching out we'll get back to you soon.
@@ -232,7 +232,7 @@ import Hero from "../components/general/hero.astro";
         </button>
       </div>
     </div>
-    <img src={beachImg.src} alt="" class="hidden lg:block w-[470px] object-cover" />
+    <img src={beachImg.src} alt="watch in a rock" class="hidden lg:block w-[470px] object-cover" />
   </section>
 
 
@@ -240,14 +240,14 @@ import Hero from "../components/general/hero.astro";
 
   <!-- free shipping section-->
   <section
-    class="flex flex-col lg:flex-row w-full h-full bg-white py-12 px-6 sm:py-16 sm:px-10 lg:py-25 lg:px-20 items-center justify-center gap-6 lg:gap-10 text-center lg:text-left"
+    class="section flex-center-column lg:flex-row h-full lg:py-25 bg-white dark:bg-dark-bg gap-6 lg:gap-10 text-center lg:text-left"
   >
     <h3
-      class="text-[24px] sm:text-[28px] lg:text-[34px] uppercase border-b lg:border-b-0 lg:border-r pb-4 lg:pb-0 lg:pr-10 h-auto lg:h-9 flex items-center justify-center border-gray"
+      class="text-[24px] sm:text-[28px] lg:text-[34px] uppercase border-b lg:border-b-0 lg:border-r pb-4 lg:pb-0 lg:pr-10 h-auto lg:h-9 flex items-center justify-center border-gray dark:border-dark-border dark:text-dark-text"
     >
       free SHIPPING
     </h3>
-    <p class="text-[16px] max-w-70 sm:max-w-50 text-gray">
+    <p class="text-[16px] max-w-70 sm:max-w-50 text-gray dark:text-dark-text-muted">
       Easy return-free shipping on all orders over £99
     </p>
     <button class="bg-gold text-white h-9 w-40">shop colletion</button>

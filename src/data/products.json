@@ -48,6 +48,11 @@
       "author": "Daniel Brooks",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/beigeBg/dark-Classic Brown Leather-front.png",
+      "back": "/watches/beigeBg/dark-Classic Brown Leather-back.png",
+      "big": "/watches/beigeBg/dark-Classic Brown Leather-big.png"
     }
   },
   {
@@ -99,6 +104,11 @@
       "author": "Olivia Moore",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/beigeBg/dark-Coronada Prosecco-front.png",
+      "back": "/watches/beigeBg/dark-Coronada Prosecco-back.png",
+      "big": "/watches/beigeBg/dark-Coronada Prosecco-big.png"
     }
   },
   {
@@ -150,6 +160,11 @@
       "author": "Daniel Brooks",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/beigeBg/dark-Bronze Sage Leather-front.png",
+      "back": "/watches/beigeBg/dark-Bronze Sage Leather-back.png",
+      "big": "/watches/beigeBg/dark-Bronze Sage Leather-big.png"
     }
   },
   {
@@ -201,6 +216,11 @@
       "author": "Emma Wilson",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/beigeBg/dark-Coronada Greyhound-front.png",
+      "back": "/watches/beigeBg/dark-Coronada Greyhound-back.png",
+      "big": "/watches/beigeBg/dark-Coronada Greyhound-big.png"
     }
   },
   {
@@ -252,6 +272,11 @@
       "author": "Daniel Brooks",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/beigeBg/dark-Revolver Bronze Age-front.png",
+      "back": "/watches/beigeBg/dark-Revolver Bronze Age-back.png",
+      "big": "/watches/beigeBg/dark-Revolver Bronze Age-big.png"
     }
   },
   {
@@ -303,6 +328,11 @@
       "author": "Olivia Moore",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/whiteBg/dark-Chrono Rose Gold-front.png",
+      "back": "/watches/whiteBg/dark-Chrono Rose Gold-back.png",
+      "big": "/watches/whiteBg/dark-Chrono Rose Gold-big.png"
     }
   },
   {
@@ -354,6 +384,11 @@
       "author": "Daniel Brooks",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/whiteBg/dark-Bristol Rose Gold-front.png",
+      "back": "/watches/whiteBg/dark-Bristol Rose Gold-back.png",
+      "big": "/watches/whiteBg/dark-Bristol Rose Gold-big.png"
     }
   },
   {
@@ -405,6 +440,11 @@
       "author": "Emma Wilson",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/whiteBg/dark-Bristol Gold Link-front.png",
+      "back": "/watches/whiteBg/dark-Bristol Gold Link-back.png",
+      "big": "/watches/whiteBg/dark-Bristol Gold Link-big.png"
     }
   },
   {
@@ -456,6 +496,11 @@
       "author": "Daniel Brooks",
       "text": "Excellent quality, comfortable on the wrist and even better looking in person.",
       "date": "May 10, 2019"
+    },
+    "imagesDark": {
+      "front": "/watches/whiteBg/dark-Bristol Silver Link-front.png",
+      "back": "/watches/whiteBg/dark-Bristol Silver Link-back.png",
+      "big": "/watches/whiteBg/dark-Bristol Silver Link-big.png"
     }
   }
 ]

@@ -26,6 +26,10 @@ const bestSellerProducts = bestSellerVariants
   .map((variant, index) => ({ variant, product: beigeWatches[index] }))
   .filter((entry) => entry.product)
   .slice(0, 4);
+
+
+
+console.log(beigeWatches[0].imagesDark.front)
 ---
 
 <Layout name="Hongo">
@@ -36,21 +40,21 @@ const bestSellerProducts = bestSellerVariants
 
 
   <!-- list section -->
-  <section class="flex w-full items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9">
-    <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full text-gray">
-      <li class="flex gap-3 items-center">
+  <section class="section flex items-center h-auto py-10 sm:py-14 space-y-9 dark:bg-dark-surface-2">
+    <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full text-gray dark:text-dark-text-muted">
+      <li class="icon-row">
         <i class="fa-solid fa-globe"></i>
         <p>WORLDWIDE SHIPPING</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="fa-solid fa-book-bookmark"></i>
         <p>CERTIFICATED BY GURUS</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="fa-solid fa-calendar"></i>
         <p>30 DAYS MONEY BACK</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="fa-solid fa-face-grin-beam"></i>
         <p>99% POSITIVE FEEDBACKS</p>
       </li>
@@ -62,9 +66,9 @@ const bestSellerProducts = bestSellerVariants
 
   <!-- images and video section -->
   <section class="flex flex-col lg:flex-row w-full">
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] bg-cover bg-center pt-5 lg:pt-25 flex items-center flex-col"> <h4 class="text-[14px] uppercase text-white">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center">High quality and
+    <div class="banner-image lg:w-120 bg-[url('/src/assets/images/watch-banner-05-new.jpg')] pt-5 lg:pt-25 flex items-center flex-col"> <h4 class="text-[14px] uppercase text-white">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center">High quality and
 good design shape</p> </div>
-    <div class="relative w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')] bg-cover bg-center">
+    <div class="relative banner-image lg:w-120 bg-[url('/src/assets/images/watch-banner-02-new.jpg')]">
   <button
     id="watch-video-btn"
     type="button"
@@ -74,8 +78,8 @@ good design shape</p> </div>
     <i class="fa-regular fa-circle-play  text-[100px] text-white hover:text-[150px] transition-all duration-300"></i>
   </button>
 </div>
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')] bg-cover bg-center"><a class="block w-full h-full" href="/shop"></a> </div>
-    <div class="w-full lg:w-120 h-64 sm:h-96 lg:h-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] bg-cover bg-center pt-5 lg:pt-25 flex items-center flex-col"><h4 class="text-[14px] uppercase text-gold">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center text-white">High quality and
+    <div class="banner-image lg:w-120 bg-[url('/src/assets/images/watch-banner-06-new-768x696.jpg')]"><a class="block w-full h-full" href="/shop"></a> </div>
+    <div class="banner-image lg:w-120 bg-[url('/src/assets/images/watch-banner-04.jpg')] pt-5 lg:pt-25 flex items-center flex-col"><h4 class="text-[14px] uppercase text-gold">OUR COLLECTION</h4> <p class="text-[22px] max-w-50 text-center text-white">High quality and
 good design shape</p></div>
   </section>
 
@@ -84,14 +88,14 @@ good design shape</p></div>
 
   <!-- feature products section -->
   <section
-    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
+    class="section flex-center-column h-auto sm:py-14 space-y-9 dark:bg-dark-surface-2"
   >
-    <div class="flex flex-col items-center">
-      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Feature Products</h3>
-      <p class="text-[14px] text-gray">Elegance is an attitude longines</p>
+    <div class="section-header">
+      <h3 class="section-title dark:text-dark-text">Feature Products</h3>
+      <p class="section-subtitle dark:text-dark-text-muted">Elegance is an attitude longines</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-0">
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-0 w-full justify-items-center lg:w-auto">
       {
         beigeWatches.map((product) => (
           <Watch
@@ -100,10 +104,11 @@ good design shape</p></div>
             priceTo={product.price.to}
             id={product.id}
             img={product.images.front}
+            imgDark={product.imagesDark.front}
           />
         ))
       }
-      {
+       {
         beigeWatches.map((product) => (
           <Watch
             name={product.name}
@@ -111,9 +116,11 @@ good design shape</p></div>
             priceTo={product.price.to}
             id={product.id}
             img={product.images.front}
+            imgDark={product.imagesDark.front}
           />
         ))
       }
+      
       
     </div>
   </section>
@@ -122,17 +129,17 @@ good design shape</p></div>
 
 
    <!-- about company section -->
-  <section class="flex flex-col lg:flex-row w-full h-auto lg:h-105 overflow-hidden items-center">
+  <section class="flex flex-col lg:flex-row w-full h-auto lg:h-105 overflow-hidden items-center dark:bg-dark-surface-2">
     <img
-      class="object-cover object-bottom w-full h-64 sm:h-80 lg:w-180 lg:h-full"
+      class="object-cover object-bottom w-full h-64 sm:h-80 lg:w-140 lg:h-full"
       src="/src/assets/images/graphic-banner-6-1.jpg"
-      alt=""
+      alt="selected products"
     />
-    <div class="relative w-full lg:w-auto">
+    <div class="relative w-full lg:w-full lg:h-full">
       <img
-        class="object-cover w-full h-64 sm:h-80 lg:h-full lg:w-auto"
+        class="object-cover w-full h-64 sm:h-80 lg:h-full lg:w-full"
         src="/src/assets/images/graphic-banner-7.jpg"
-        alt=""
+        alt="Black watch"
       />
       <h3 class=" decor-line absolute text-gold top-8 sm:top-12 lg:top-40 left-6 sm:left-10 lg:left-20 text-[12px]">
         ABOUT COMPANY
@@ -148,11 +155,11 @@ good design shape</p></div>
 
   <!-- best seller section -->
   <section
-    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-60 space-y-9"
+    class="section flex-center-column h-auto py-10 sm:py-14 lg:px-60 space-y-9 dark:bg-dark-surface-2"
   >
-    <div class="flex flex-col items-center">
-      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Best seller Products</h3>
-      <p class="text-[14px] text-gray">You're not quite sure of your position</p>
+    <div class="section-header">
+      <h3 class="section-title dark:text-dark-text">Best seller Products</h3>
+      <p class="section-subtitle dark:text-dark-text-muted">You're not quite sure of your position</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-100 pb-120 lg:pb-0 sm:gap-4 lg:gap-8 auto-rows-[260px] sm:auto-rows-[300px] lg:auto-rows-[350px] w-full">
@@ -166,6 +173,7 @@ good design shape</p></div>
           price={`£${product.price.from} - £${product.price.to}`}
           image={product.images.front}
           id={product.id}
+          imgDark={product.imagesDark.front}
         />
       )
     )
@@ -181,7 +189,7 @@ good design shape</p></div>
     <div class="relative">
       <img
         src="/src/assets/images/graphic-banner-8.jpg"
-        alt=""
+        alt="Black and golden watches"
         class="w-full h-50 object-cover lg:h-auto"
       />
       <div
@@ -202,19 +210,19 @@ good design shape</p></div>
     <ul
       class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 w-full items-center py-6 px-6 sm:py-8 sm:px-10 lg:py-10 lg:px-20 bg-dark"
     >
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="text-gold fa-solid fa-globe"></i>
         <p class="text-white">WORLDWIDE SHIPPING</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="text-gold fa-solid fa-book-bookmark"></i>
         <p class="text-white">CERTIFICATED BY GURUS</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="text-gold fa-solid fa-calendar"></i>
         <p class="text-white">30 DAYS MONEY BACK</p>
       </li>
-      <li class="flex gap-3 items-center">
+      <li class="icon-row">
         <i class="text-gold fa-solid fa-face-grin-beam"></i>
         <p class="text-white">99% POSITIVE FEEDBACKS</p>
       </li>
@@ -227,11 +235,11 @@ good design shape</p></div>
   
    <!-- last blogs section -->
   <section
-    class="flex flex-col w-full justify-center items-center h-auto py-10 px-6 sm:py-14 sm:px-10 lg:py-20 lg:px-20 space-y-9"
+    class="section flex-center-column h-auto py-10 sm:py-14 space-y-9 dark:bg-dark-surface-2"
   >
-    <div class="flex flex-col items-center">
-      <h3 class="text-[24px] sm:text-[26px] lg:text-[30px] font-medium">Latest Blogs</h3>
-      <p class="text-[14px] text-gray">You're not quite sure of your position</p>
+    <div class="section-header">
+      <h3 class="section-title dark:text-dark-text">Latest Blogs</h3>
+      <p class="section-subtitle dark:text-dark-text-muted">You're not quite sure of your position</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <Blog />
@@ -286,7 +294,7 @@ good design shape</p></div>
   function closeModal() {
     modal.classList.add("hidden");
     modal.classList.remove("flex");
-    iframe.src = ""; // corta la reproducción al cerrar
+    iframe.src = "";
     document.body.classList.remove("overflow-hidden");
   }
 
